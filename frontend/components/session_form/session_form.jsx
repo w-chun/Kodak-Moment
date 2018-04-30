@@ -49,12 +49,14 @@ export default class SessionForm extends React.Component {
       navLogin = (<p>Have an account? <Link to='login'>Log In</Link></p>);
     } else {
       button = 'Log In';
-      navSignup = (<p>Don't have an account? <Link to='login'>Sign Up</Link></p>);
+      navSignup = (<p>Don't have an account? <Link to='signup'>Sign Up</Link></p>);
     }
 
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
+          <div className='session-form'>
+          {message}
           <input type='text'
             value={this.state.username}
             onChange={this.update('username')}
@@ -67,6 +69,9 @@ export default class SessionForm extends React.Component {
             placeholder='Password'
             required='true' />
           <input type='submit' value={button}/>
+          </div>
+          <div className='nav-login'>{navLogin}</div>
+          <div className='nav-signup'>{navSignup}</div>
         </form>
       </div>
     );
