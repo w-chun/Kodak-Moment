@@ -16,6 +16,12 @@ export default class SessionForm extends React.Component {
       img_url: "https://res.cloudinary.com/dih798zsl/image/upload/c_scale,w_50/v1511461159/765-default-avatar_zsj3xt.png"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
+    this.handleErrors = this.handleErrors.bind(this);
+  }
+
+  componentWillUnmount () {
+    this.props.clearErrors();
   }
 
   update(field) {
@@ -28,6 +34,29 @@ export default class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user, this.props.formType);
+  }
+
+  handleErrors() {
+    return (e) => {
+      e.preventDefault();
+      this.props.clearErrors();
+    };
+  }
+
+  renderErrors() {
+    if (this.props.errors.length > 0) {
+      return (
+        <div>
+          <ul>
+            {this.props.errors.map((error,i) => (
+              <li key={`error-${i}`}>
+                {error}
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
   }
 
   render() {
@@ -69,6 +98,7 @@ export default class SessionForm extends React.Component {
             placeholder='Password'
             required='true' />
           <input type='submit' value={button}/>
+          {this.renderErrors()}
           </div>
           <div className='nav-login'>{navLogin}</div>
           <div className='nav-signup'>{navSignup}</div>
