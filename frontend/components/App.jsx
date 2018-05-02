@@ -6,7 +6,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <h1>Kodak Moment</h1>
     <Route exact path='/' component={SessionFormContainer} />
     <ProtectedRoute path='/posts' component={HomeContainer} />
     <AuthRoute path='/login' component={SessionFormContainer} />

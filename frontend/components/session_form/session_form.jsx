@@ -74,17 +74,18 @@ export default class SessionForm extends React.Component {
           placeholder='Email'
           required='true' />
       );
-      message = 'Sign up to see Kodaks from your friends';
-      navLogin = (<p>Have an account? <Link to='login'>Log In</Link></p>);
+      message = <p className='message'>Sign up to see Kodaks from your friends</p>;
+      navLogin = (<p>Have an account? <Link to='login' className='nav-login-link'>Log In</Link></p>);
     } else {
       button = 'Log In';
-      navSignup = (<p>Don't have an account? <Link to='signup'>Sign Up</Link></p>);
+      navSignup = (<p>Don't have an account? <Link to='signup' className='nav-signup-link'>Sign Up</Link></p>);
     }
 
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <div className='session-form-container'>
+        <form onSubmit={this.handleSubmit} className='session-form-wrapper'>
           <div className='session-form'>
+          <h1 className='home-header'>Kodak Moment</h1>
           {message}
           <input type='text'
             value={this.state.username}
@@ -97,7 +98,7 @@ export default class SessionForm extends React.Component {
             onChange={this.update('password')}
             placeholder='Password'
             required='true' />
-          <input type='submit' value={button}/>
+          <input type='submit' value={button} className='submit-button'/>
           {this.renderErrors()}
           </div>
           <div className='nav-login'>{navLogin}</div>
