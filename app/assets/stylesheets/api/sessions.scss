@@ -67,3 +67,20 @@
   color: #999;
   font-weight: bold;
 }
+
+.session-errors {
+  margin: 0;
+}
+
+.errors-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  text-align: center;
+  color: #ed4956;
+  margin-left: -40px;
+}
+
+.errors-list li {
+  margin-top: 5px;
+}
