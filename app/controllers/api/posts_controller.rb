@@ -24,4 +24,10 @@ class Api::PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @post.destroy
   end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:img_url, :author_id, :caption)
+  end
 end
