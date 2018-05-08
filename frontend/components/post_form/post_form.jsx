@@ -8,6 +8,7 @@ export default class PostForm extends React.Component {
       caption: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.uploadPhoto = this.uploadPhoto.bind(this);
   }
 
   handleSubmit(e){
@@ -22,14 +23,26 @@ export default class PostForm extends React.Component {
     };
   }
 
+  uploadPhoto(e){
+    e.preventDefault();
+
+    cloudinary.openUploadWidget(
+      window.cloudinary_options,
+      function (err, results){
+        if (!err) {
+          let newState = Object.assign({}, this.state, {img_url: results[0].url});
+          this.setState(newState);
+        }
+      }.bind(this));
+  }
+
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input text='text'
-            value={this.state.img_url}
-            onChange={this.update('img_url')}
-            placeholder='img_url' />
+          <img src={this.state.img_url} className='img-preview'></img>
+          <button
+            onClick={this.uploadPhoto}>Choose File</button>
           <input type='text'
             value={this.state.caption}
             onChange={this.update('caption')}
