@@ -12,6 +12,8 @@ class Api::PostsController < ApplicationController
   def index
     if params[:user_id]
       @posts = User.find_by(id: params[:user_id]).posts
+    else
+      @posts = Post.all
     end
   end
 
