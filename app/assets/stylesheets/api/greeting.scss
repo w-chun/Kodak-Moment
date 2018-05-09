@@ -1,0 +1,69 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-camera-retro {
+  font-size: 40px;
+  color: black;
+  border-right: 1px solid #ccc;
+  padding-right: 20px;
+}
+
+.header-home-link {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+}
+
+.header-home-link a {
+  display: flex;
+  text-decoration: none;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-family: 'Satisfy';
+  color: black;
+  padding-left: 20px;
+}
+
+.upload-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 12px;
+  border: 1px solid #dbdbdb;
+  border-radius: 2px;
+  padding: 7px;
+}
+
+.fa-upload {
+  padding-right: 5px;
+}
+
+.upload-link a{
+  text-decoration: none;
+  color: #999;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+}
+
+.fa-compass, .fa-user, .fa-sign-out-alt {
+  font-size: 30px;
+  padding-right: 30px;
+}
+
+.fa-sign-out-alt:hover {
+  cursor: pointer;
+}
