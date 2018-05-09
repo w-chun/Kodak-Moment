@@ -10,12 +10,12 @@ const sessionLinks = () => (
 
 const personalGreeting = (currentUser, logout) => (
   <header className='header'>
-    <div className='header-home-link'><Link to='/posts'><i class="fas fa-camera-retro"></i><div className='header-title'>Kodak Moment</div></Link></div>
-    <div className='upload-link'><Link to='/upload'><i class="fas fa-upload"></i>Upload</Link></div>
+    <div className='header-home-link'><Link to='/posts'><i className="fas fa-camera-retro"></i><div className='header-title'>Kodak Moment</div></Link></div>
+    <div className='upload-link'><Link to='/upload'><i className="fas fa-upload"></i>Upload</Link></div>
     <div className='nav-links'>
-      <div><i class="far fa-compass"></i></div>
-      <div><i class="far fa-user"></i></div>
-      <div><i class="fas fa-sign-out-alt" onClick={logout}></i></div>
+      <div><i className="far fa-compass"></i></div>
+      <div><i className="far fa-user"></i></div>
+      <div><i className="fas fa-sign-out-alt" onClick={logout}></i></div>
     </div>
   </header>
 );

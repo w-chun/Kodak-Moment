@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class PostForm extends React.Component {
   constructor(props){
@@ -9,6 +10,7 @@ export default class PostForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.uploadPhoto = this.uploadPhoto.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   handleSubmit(e){
@@ -36,9 +38,24 @@ export default class PostForm extends React.Component {
       }.bind(this));
   }
 
+  logout() {
+    return(e) => {
+      e.preventDefault();
+      this.props.logout();
+    };
+  }
+
   render() {
     return (
       <div>
+        <header className='header'>
+          <div className='header-home-link'><Link to='/posts'><i className="fas fa-camera-retro"></i><div className='header-title'>Kodak Moment</div></Link></div>
+          <div className='nav-links'>
+            <div><i className="far fa-compass"></i></div>
+            <div><i className="far fa-user"></i></div>
+            <div><i className="fas fa-sign-out-alt" onClick={this.logout()}></i></div>
+          </div>
+        </header>
         <form onSubmit={this.handleSubmit}>
           <img src={this.state.img_url} className='img-preview'></img>
           <button
