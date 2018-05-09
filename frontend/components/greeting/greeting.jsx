@@ -10,6 +10,7 @@ const sessionLinks = () => (
 
 const personalGreeting = (currentUser, logout) => (
   <header>
+    <div><Link to='/upload'>Upload</Link></div>
     <div>
       <div><img src={currentUser.img_url}></img>Welcome {currentUser.username}!</div>
     </div>

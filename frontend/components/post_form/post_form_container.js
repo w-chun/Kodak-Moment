@@ -6,8 +6,9 @@ const mapStateToProps = state => ({
   currentUser: state.session.currentUser
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch, {history}) => ({
   createPost: (post) => dispatch(createPost(post))
+    .then(() => history.push('/posts'))
 });
 
 export default connect(
