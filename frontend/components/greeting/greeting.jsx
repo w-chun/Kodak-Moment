@@ -48,7 +48,7 @@ export default class Greeting extends React.Component {
     return (
       <div className='greeting-container-wrapper'>
       <header className='header'>
-        <div className='header-home-link'><Link to='/posts'><i className="fas fa-camera-retro"></i><div className='header-title'>Kodak Moment</div></Link></div>
+        <div className='header-home-link'><Link to='/'><i className="fas fa-camera-retro"></i><div className='header-title'>Kodak Moment</div></Link></div>
         <button onClick={this.openModal} className='upload-button'><i className="fas fa-upload"></i>Upload</button>
         <div className='nav-links'>
           <div><i className="far fa-compass"></i></div>
