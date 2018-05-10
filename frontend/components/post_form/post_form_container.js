@@ -7,9 +7,8 @@ const mapStateToProps = state => ({
   currentUser: state.session.currentUser
 });
 
-const mapDispatchToProps = (dispatch, {history}) => ({
-  createPost: (post) => dispatch(createPost(post))
-    .then(() => history.push('/posts')),
+const mapDispatchToProps = (dispatch) => ({
+  createPost: (post) => dispatch(createPost(post)),
   logout: () => dispatch(logout())
 });
 

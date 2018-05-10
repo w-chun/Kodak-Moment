@@ -1,3 +1,25 @@
+.post-form-wrapper {
+  display: flex;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto;
+}
+
+.caption {
+  margin: 10px 0 10px 0;
+}
+
+.share-button {
+  background: #3897f0;
+  color: #fff;
+  border-radius: 3px;
+}
+
 .img-preview {
+  margin: 10px 0 10px 0;
   width: 300px;
 }

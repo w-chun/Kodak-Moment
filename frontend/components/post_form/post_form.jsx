@@ -48,24 +48,19 @@ export default class PostForm extends React.Component {
   render() {
     return (
       <div>
-        <header className='header'>
-          <div className='header-home-link'><Link to='/posts'><i className="fas fa-camera-retro"></i><div className='header-title'>Kodak Moment</div></Link></div>
-          <div className='nav-links'>
-            <div><i className="far fa-compass"></i></div>
-            <div><i className="far fa-user"></i></div>
-            <div><i className="fas fa-sign-out-alt" onClick={this.logout()}></i></div>
-          </div>
-        </header>
-        <form onSubmit={this.handleSubmit}>
+        <div className='post-form-wrapper'>
+        <form onSubmit={this.handleSubmit} className='post-form'>
           <img src={this.state.img_url} className='img-preview'></img>
-          <button
-            onClick={this.uploadPhoto}>Choose File</button>
-          <input type='text'
+          <input type='file'
+            onClick={this.uploadPhoto} className='file-button'></input>
+          <textarea
             value={this.state.caption}
             onChange={this.update('caption')}
-            placeholder='caption' />
-          <input type='submit' value='Share' className='submit-button'/>
+            placeholder='Caption'
+            className='caption' />
+          <input type='submit' value='Share' className='share-button' />
         </form>
+        </div>
       </div>
   );
   }
