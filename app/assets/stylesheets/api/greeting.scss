@@ -1,7 +1,21 @@
+.greeting-container-wrapper {
+  display: flex;
+  position: fixed;
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+  height: 50px;
+  width: 100%;
+  top: 0px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 7px;
+  width: 1020px;
+  min-width: 600px;
+  margin: auto;
 }
 
 .fa-camera-retro {

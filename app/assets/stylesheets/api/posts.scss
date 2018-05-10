@@ -6,7 +6,12 @@
   max-width: 600px;
   border: 1px solid #eee;
   list-style: none;
-  margin: 80px;
+  margin: auto;
+  margin-bottom: 80px;
+}
+
+.post-index-item:first-child {
+  margin-top: 100px;
 }
 
 .post-user {
