@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string           not null
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  img_url         :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
   validates :username, :email, presence: true, uniqueness: true
   validates :password_digest, :session_token, presence: true
@@ -7,6 +21,11 @@ class User < ApplicationRecord
   primary_key: :id,
   foreign_key: :author_id,
   class_name: :Post
+
+  has_many :likes,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: :Like
 
   attr_reader :password
 
