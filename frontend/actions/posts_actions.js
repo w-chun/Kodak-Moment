@@ -38,3 +38,13 @@ export const deletePost = (postId) => dispatch => (
   APIPostsUtil.deletePost(postId)
     .then(() => dispatch(postId))
 );
+
+export const createLike = (postId) => dispatch => (
+  APIPostsUtil.createLike(postId)
+    .then(post => dispatch(receivePost))
+);
+
+export const deleteLike = (postId) => dispatch => (
+  APIPostsUtil.deleteLike(postId)
+    .then(post => dispatch(receivePost))
+);
