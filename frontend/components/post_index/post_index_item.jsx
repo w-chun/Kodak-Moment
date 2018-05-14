@@ -12,7 +12,10 @@ export default class PostIndexItem extends React.Component {
             <img src={post.user.img_url}/> {post.user.username}
           </div>
           <img src={post.img_url} className='post-img'/>
-          <LikeContainer /> 
+          <LikeContainer
+            post={post}
+            post_id={post.id} />
+          <div>{post.likes} likes</div>
           <div><b>{post.user.username}</b> {post.caption}</div>
         </div>
       </li>

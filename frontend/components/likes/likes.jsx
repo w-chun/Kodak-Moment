@@ -3,7 +3,7 @@ import React from 'react';
 export default class Likes extends React.Component {
   constructor(props) {
     super(props);
-    const liked = this.props.liked;
+    this.handleLike = this.handleLike.bind(this);
   }
 
   handleLike(e) {
@@ -11,18 +11,18 @@ export default class Likes extends React.Component {
     if (this.props.post.liked) {
       this.props.deleteLike(this.props.postId);
     } else {
-      this.props.addLike(this.props.postId);
+      this.props.createLike(this.props.postId);
     }
   }
 
   render() {
     if (this.props.post.liked) {
       return (
-        <i class="far fa-heart" onClick={this.handleLike}></i>
+        <i className="fas fa-heart" onClick={this.handleLike}></i>
       );
     } else {
       return (
-        <i class="fas fa-heart" onClick={this.handleLike}></i>
+        <i className="far fa-heart" onClick={this.handleLike}></i>
       );
     }
   }

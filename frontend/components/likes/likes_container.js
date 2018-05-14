@@ -2,13 +2,10 @@ import { connect } from 'react-redux';
 import { createLike, deleteLike } from '../../actions/posts_actions';
 import Likes from './likes';
 
-const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps);
-  return {
+const mapStateToProps = (state, ownProps) => ({
     currentUser: state.session.currentUser,
     postId: ownProps.post.id
-  };
-};
+});
 
 const mapDispatchToProps = dispatch => ({
   createLike: postId => dispatch(createLike(postId)),

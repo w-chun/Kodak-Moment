@@ -4,8 +4,8 @@ Rails.application.routes.draw do
     resources :users, only: [:new, :create]
     resource :session, only: [:new, :create, :destroy]
     resources :posts, only: [:create, :index, :show, :destroy] do
-      resources :likes, only: [:create, :destroy]
-    end 
+      resource :like, only: [:create, :destroy]
+    end
   end
 
   root "static_pages#root"
