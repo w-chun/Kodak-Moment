@@ -43,11 +43,11 @@ class Api::CommentsController < ApplicationController
     else
       render json: @comment.errors.full_messages, status: 401
     end
-  end 
+  end
 
   private
 
   def comment_params
-    params.require(:comment).permit(:id, :body, :post_id, :author_id)
+    params.require(:comment).permit(:body)
   end
 end
