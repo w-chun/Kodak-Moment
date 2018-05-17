@@ -10,10 +10,6 @@ export default class Comments extends React.Component {
     };
   }
 
-  componentDidMount(){
-    this.props.fetchPostComments(this.props.post_id);
-  }
-
   update(field) {
     return e => {
       this.setState({[field]: e.currentTarget.value});

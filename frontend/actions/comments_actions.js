@@ -28,12 +28,12 @@ export const removeComment = (commentId) => ({
 
 export const fetchAllComments = () => dispatch => (
   APICommentsUtil.fetchAllComments()
-    .then(comments => dispatch(fetchAllComments(comments)))
+    .then(comments => dispatch(receiveAllComments(comments)))
 );
 
 export const fetchPostComments = (postId) => dispatch => (
   APICommentsUtil.fetchPostComments(postId)
-    .then(comments => dispatch(fetchPostComments(comments)))
+    .then(comments => dispatch(receivePostComments(comments)))
 );
 
 export const createComment = (postId, formComment) => dispatch => (

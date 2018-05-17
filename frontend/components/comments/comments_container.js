@@ -1,19 +1,15 @@
 import { connect } from 'react-redux';
-import { fetchAllComments, fetchPostComments,
-  createComment, deleteComment } from '../../actions/comments_actions';
+import { createComment, deleteComment } from '../../actions/comments_actions';
 import { selectComments } from '../../reducers/selectors';
 import Comments from './comments';
 
-const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps);
-  return {
+const mapStateToProps = (state, ownProps) => ({
   postId: ownProps.post.id,
-  postComments: selectComments(state, ownProps.post.id)
-};
-};
+  postComments: selectComments(state, ownProps.post.id),
+  currentUser: state.session.currentUser
+});
 
 const mapDispatchToProps = dispatch => ({
-  fetchPostComments: (postId) => dispatch(fetchPostComments(postId)),
   createComment: (postId, comment) => dispatch(createComment(postId, comment)),
   deleteComment: (commentId) => dispatch(deleteComment(commentId))
 });

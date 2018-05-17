@@ -19,6 +19,7 @@ export default class PostIndexItem extends React.Component {
           <div>{post.likes} likes</div>
           <div><b>{post.user.username}</b> {post.caption}</div>
           <CommentsContainer
+            post={post}
             comments={comments}
             post_id={post.id} />
         </div>
