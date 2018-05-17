@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LikeContainer from '../likes/likes_container';
+import CommentsContainer from '../comments/comments_container';
 
 export default class PostIndexItem extends React.Component {
   render(){
-    const {post} = this.props;
+    const { post, comments } = this.props;
     return (
       <li className='post-index-item'>
         <div>
@@ -17,6 +18,9 @@ export default class PostIndexItem extends React.Component {
             post_id={post.id} />
           <div>{post.likes} likes</div>
           <div><b>{post.user.username}</b> {post.caption}</div>
+          <CommentsContainer
+            comments={comments}
+            post_id={post.id} />
         </div>
       </li>
     );

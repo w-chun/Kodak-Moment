@@ -20,6 +20,7 @@ class Api::CommentsController < ApplicationController
   def index
     if params[:post_id]
       @comments = Post.find_by(id: params[:post_id]).comments
+      render 'api/comments/index'
     else
       @comments = Comment.all
     end

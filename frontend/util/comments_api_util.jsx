@@ -1,7 +1,7 @@
 export const fetchPostComments = (postId) => (
   $.ajax({
     method: 'GET',
-    ulr: `/api/posts/${postId}/comments`
+    url: `/api/posts/${postId}/comments`
   })
 );
 

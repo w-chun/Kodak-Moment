@@ -1,7 +1,7 @@
 import * as APICommentsUtil from '../util/comments_api_util';
 
 export const RECEIVE_ALL_COMMENTS = 'RECEIVE_ALL_COMMENTS';
-export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
+export const RECEIVE_POST_COMMENTS = 'RECEIVE_POST_COMMENTS';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 
@@ -12,7 +12,7 @@ export const receiveAllComments = (comments) => ({
 });
 
 export const receivePostComments = (comments) => ({
-  type: RECEIVE_COMMENTS,
+  type: RECEIVE_POST_COMMENTS,
   comments
 });
 
