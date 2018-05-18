@@ -8,6 +8,7 @@ export default class Comments extends React.Component {
       author: this.props.currentUser.username,
       body: ''
     };
+    this.handleComment = this.handleComment.bind(this);
   }
 
   update(field) {
@@ -19,18 +20,29 @@ export default class Comments extends React.Component {
   handleComment(e) {
     e.preventDefault();
     const comment = Object.assign({}, this.state);
-    this.props.createComment(this.props.postId, comment);
+    this.props.createComment(this.props.postId, comment)
+      .then(this.setState({body: ''}));
   }
 
   render() {
+    const { currentUser, deleteComment } = this.props;
     const comments = this.props.postComments.map(comment => (
       <CommentsIndexItem
           key={comment.id}
-          comment={comment} />
+          comment={comment}
+          currentUser={currentUser}
+          deleteComment={deleteComment} />
       ));
     return (
       <div>
         {comments}
+        <form onSubmit={this.handleComment}>
+          <input type='text'
+            value={this.state.body}
+            onChange={this.update('body')}
+            placeholder='Add a comment...' />
+          <input type='submit' value='Post' />
+        </form>
       </div>
     );
   }
