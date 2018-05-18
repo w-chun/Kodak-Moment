@@ -15,14 +15,13 @@ export default class CommentsIndexItem extends React.Component {
     let deleteButton;
     const { comment, currentUser } = this.props;
     if (currentUser.id === comment.author_id) {
-      deleteButton = <i className="fas fa-times" onClick={this.deleteComment}></i>;
+      deleteButton = <div className='delete-button'><i className="fas fa-times" onClick={this.deleteComment}></i></div>;
     }
     return (
       <ul>
-        <li>
-          <div>
-            <div>{comment.commenter}</div>
-            <div>{comment.body}</div>
+        <li className='comment-index-item'>
+          <div className='comment'>
+            <div><b>{comment.commenter}</b> {comment.body}</div>
             {deleteButton}
           </div>
         </li>

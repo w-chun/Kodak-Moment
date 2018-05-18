@@ -16,8 +16,25 @@
 
 .post-user {
   display: flex;
+  margin: 15px;
+  align-items: center;
+}
+
+.post-user-image {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 
 .post-img {
   max-width: 600px;
+}
+
+.likes-comments-container {
+  margin: 15px;
+}
+
+.likes-counter {
+  margin: 5px 0 5px 0;
 }

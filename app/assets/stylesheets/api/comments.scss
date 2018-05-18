@@ -1,3 +1,44 @@
 // Place all the styles related to the api/comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment-index-item {
+  list-style: none;
+}
+
+.comment {
+  display: flex;
+  margin: 5px;
+  margin-left: -40px;
+  justify-content: space-between;
+}
+
+.delete-button {
+  display: flex;
+}
+
+.fa-times:hover {
+  cursor: pointer;
+}
+
+.comment-form {
+  margin-top: 5px;
+  border-top: 1px solid #eee;
+}
+
+.comment-input {
+  margin-top: 10px;
+  border: none;
+  font-size: 14px;
+  width: 92%;
+}
+
+.post-button {
+  border: none;
+  font-size: 14px;
+  color: #3897f0;
+}
+
+.post-button:hover {
+  cursor: pointer;
+}

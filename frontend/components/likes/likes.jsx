@@ -18,7 +18,7 @@ export default class Likes extends React.Component {
   render() {
     if (this.props.post.liked) {
       return (
-        <i className="fas fa-heart" onClick={this.handleLike}></i>
+        <i className="fas fa-heart liked" onClick={this.handleLike}></i>
       );
     } else {
       return (

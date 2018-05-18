@@ -34,14 +34,15 @@ export default class Comments extends React.Component {
           deleteComment={deleteComment} />
       ));
     return (
-      <div>
+      <div className='comment-index-item-container'>
         {comments}
-        <form onSubmit={this.handleComment}>
+        <form onSubmit={this.handleComment} className='comment-form'>
           <input type='text'
             value={this.state.body}
             onChange={this.update('body')}
-            placeholder='Add a comment...' />
-          <input type='submit' value='Post' />
+            placeholder='Add a comment...'
+            className='comment-input' />
+          <input type='submit' value='Post' className='post-button' />
         </form>
       </div>
     );
