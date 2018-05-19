@@ -25,7 +25,8 @@ export default class Comments extends React.Component {
   }
 
   render() {
-    const { currentUser, deleteComment } = this.props;
+    let age;
+    const { currentUser, deleteComment, post } = this.props;
     const comments = this.props.postComments.map(comment => (
       <CommentsIndexItem
           key={comment.id}
@@ -33,9 +34,13 @@ export default class Comments extends React.Component {
           currentUser={currentUser}
           deleteComment={deleteComment} />
       ));
+    if (this.props.post.age) {
+      age = <div className='post-age'>{post.age} ago</div>;
+    }
     return (
       <div className='comment-index-item-container'>
         {comments}
+        {age}
         <form onSubmit={this.handleComment} className='comment-form'>
           <input type='text'
             value={this.state.body}
