@@ -15,7 +15,10 @@ export default class PostIndex extends React.Component {
     return (
       <div>
         <ul>
-          {this.props.posts.map(post => (
+          {this.props.posts.sort(function (a,b) {
+            return (b.id - a.id);
+          })
+          .map(post => (
             <PostIndexItem
               key={post.id}
               post={post}
