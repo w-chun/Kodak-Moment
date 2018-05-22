@@ -32,6 +32,16 @@ class User < ApplicationRecord
   foreign_key: :author_id,
   class_name: :Post
 
+  has_many :followers,
+  primary_key: :id,
+  foreign_key: :followee_id,
+  class_name: :Follow
+
+  has_many :followees,
+  primary_key: :id,
+  foreign_key: :follower_id,
+  class_name: :Follow
+
   attr_reader :password
 
   after_initialize :ensure_session_token
