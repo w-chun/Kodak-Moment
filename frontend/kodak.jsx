@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { fetchAllComments, fetchPostComments, createComment, deleteComment } from './actions/comments_actions';
+import { fetchUser, fetchFollowers, fetchFollowees, createFollow, deleteFollow } from './actions/user_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -20,10 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchAllComments = fetchAllComments;
-  window.fetchPostComments = fetchPostComments;
-  window.createComment = createComment;
-  window.deleteComment = deleteComment;
+  window.fetchUser = fetchUser;
+  window.fetchFollowers = fetchFollowers;
+  window.fetchFollowees = fetchFollowees;
+  window.createFollow = createFollow;
+  window.deleteFollow = deleteFollow;
 
   ReactDOM.render(<Root store={ store }/>, root);
 });
