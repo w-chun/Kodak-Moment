@@ -30,6 +30,8 @@ export default class Profile extends React.Component {
     let followButton;
     if (this.props.user.followed) {
       followButton = <button onClick={this.handleFollow}>Following</button>;
+    } else if (this.props.user.id == this.props.currentUser.id) {
+      followButton = <button>Edit Profile</button>;
     } else {
       followButton = <button onClick={this.handleFollow}>Follow</button>;
     }
