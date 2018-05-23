@@ -17,3 +17,9 @@ json.followees do
     end
   end
 end
+json.posts_count @user.posts.count
+json.followers_count @user.followers.count
+json.followees_count @user.followees.count
+if logged_in?
+  json.followed @user.followers.any?{ |follower| follower.follower_id == current_user.id }
+end

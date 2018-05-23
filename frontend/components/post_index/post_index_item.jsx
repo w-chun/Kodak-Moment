@@ -16,7 +16,7 @@ export default class PostIndexItem extends React.Component {
       <li className='post-index-item'>
         <div>
           <div className='post-user'>
-            <img className='post-user-image' src={post.user.img_url}/> {post.user.username}
+            <img className='post-user-image' src={post.user.img_url}/> <Link to={`/users/${post.author_id}`}>{post.user.username}</Link>
           </div>
           <img src={post.img_url} className='post-img'/>
           <div className='likes-comments-container'>
