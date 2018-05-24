@@ -31,23 +31,34 @@ export default class Profile extends React.Component {
   render() {
     let followButton;
     if (this.props.user.followed) {
-      followButton = <button onClick={this.handleFollow}>Following</button>;
+      followButton = <button onClick={this.handleFollow} className='follow-button'>Following</button>;
     } else if (this.props.user.id == this.props.currentUser.id) {
-      followButton = <button>Edit Profile</button>;
+      followButton = <button className='follow-button'>Edit Profile</button>;
     } else {
-      followButton = <button onClick={this.handleFollow}>Follow</button>;
+      followButton = <button onClick={this.handleFollow} className='follow-button'>Follow</button>;
     }
     const { user } = this.props;
     return (
       <div className='profile-container-wrapper'>
         <GreetingContainer />
-        <img src={user.img_url} className='user-profile-pic'></img>
-        <div>{user.username}</div>
-        {followButton}
-        <div>Posts: {this.props.postsCount}</div>
-        <div>Followers: {this.props.followersCount}</div>
-        <div>Following: {this.props.followeesCount}</div>
-        <ProfilePostIndexContainer />
+        <div className='profile-container'>
+          <div className='profile-info'>
+            <div className='user-profile-pic-wrapper'>
+              <div className='user-profile-pic'><img src={user.img_url}></img></div>
+            </div>
+            <div className='profile-details'>
+              <div className='profile-username'>{user.username}
+                <div className='follow-button-wrapper'>{followButton}</div>
+              </div>
+              <div className='profile-stats'>
+                <div className='posts-count'><b>{this.props.postsCount}</b> posts</div>
+                <div className='followers-count'><b>{this.props.followersCount}</b> followers</div>
+                <div className='followees-count'><b>{this.props.followeesCount}</b> following</div>
+              </div>
+            </div>
+          </div>
+          <ProfilePostIndexContainer />
+        </div>
       </div>
     );
   }

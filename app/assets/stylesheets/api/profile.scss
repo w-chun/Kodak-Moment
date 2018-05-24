@@ -1,9 +1,56 @@
 .profile-container-wrapper {
-  margin-top: 100px;
+  margin-top: 137px;
+}
+
+.profile-container {
+  margin: auto;
+  max-width: 1020px;
+}
+
+.profile-info {
+  display: flex;
+}
+
+.user-profile-pic-wrapper {
+  justify-content: center;
+  margin: 0 75px 0 75px;
 }
 
 .user-profile-pic {
-  max-width: 152px;
-  max-height: 152px;
+  width: 152px;
+  height: 152px;
+  margin-right: 30px;
+}
+
+.user-profile-pic img {
   border-radius: 50%;
+}
+
+.profile-username {
+  display: flex;
+  font-size: 22px;
+  font-weight: 200;
+}
+
+.follow-button-wrapper {
+  display: flex;
+  margin-left: 20px;
+}
+
+.follow-button {
+  font-weight: 600;
+  padding: 0 24px 0 24px;
+  border-color: #dbdbdb;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.profile-stats {
+  display: flex;
+  margin: 20px 0
+}
+
+.posts-count, .followers-count {
+  margin-right: 40px;
 }

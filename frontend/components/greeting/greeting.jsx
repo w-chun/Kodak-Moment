@@ -52,7 +52,7 @@ export default class Greeting extends React.Component {
         <button onClick={this.openModal} className='upload-button'><i className="fas fa-upload"></i>Upload</button>
         <div className='nav-links'>
           <div><i className="far fa-compass"></i></div>
-          <div><i className="far fa-user"></i></div>
+          <Link to={`/users/${this.props.currentUser.id}`} className='nav-profile-link'><div><i className="far fa-user"></i></div></Link>
           <div><i className="fas fa-sign-out-alt" onClick={this.props.logout}></i></div>
         </div>
       </header>
