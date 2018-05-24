@@ -48,3 +48,8 @@ export const deleteLike = (postId) => dispatch => (
   APIPostsUtil.deleteLike(postId)
     .then(post => dispatch(receivePost(post)))
 );
+
+export const fetchUserPosts = (userId) => dispatch => (
+  APIPostsUtil.fetchUserPosts(userId)
+    .then(posts => dispatch(receivePosts(posts)))
+);

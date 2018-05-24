@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchUser, fetchFollowers, fetchFollowees, createFollow, deleteFollow } from '../../actions/user_actions';
+import { fetchUserPosts } from '../../actions/posts_actions';
 import Profile from './profile';
 
 const mapStateToProps = (state) => ({
@@ -16,7 +17,8 @@ const mapDispatchToProps = (dispatch) => ({
   fetchFollowers: (userId) => dispatch(fetchFollowers(userId)),
   fetchFollowees: (userId) => dispatch(fetchFollowees(userId)),
   createFollow: (userId, currentUser) => dispatch(createFollow(userId, currentUser)),
-  deleteFollow: (userId, currentUser) => dispatch(deleteFollow(userId, currentUser))
+  deleteFollow: (userId, currentUser) => dispatch(deleteFollow(userId, currentUser)),
+  fetchUserPosts: (userId) => dispatch(fetchUserPosts(userId))
 });
 
 export default connect(

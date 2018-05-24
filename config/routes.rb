@@ -6,6 +6,7 @@ Rails.application.routes.draw do
         get 'followers', on: :collection
         get 'followees', on: :collection
       end
+      resources :posts, only: [:index]
     end
     resource :session, only: [:new, :create, :destroy]
     resources :posts, only: [:create, :index, :show, :destroy] do
