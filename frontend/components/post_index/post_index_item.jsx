@@ -6,11 +6,15 @@ import CommentsContainer from '../comments/comments_container';
 export default class PostIndexItem extends React.Component {
   render(){
     let likes;
+    let caption;
     const { post, comments } = this.props;
     if (post.likes === 1) {
       likes = <div className='likes-counter'>{post.likes} like</div>;
     } else if (post.likes > 0) {
       likes = <div className='likes-counter'>{post.likes} likes</div>;
+    }
+    if (post.caption) {
+      caption = <div className='post-caption'><b>{post.user.username}</b> {post.caption}</div>;
     }
     return (
       <li className='post-index-item'>
@@ -27,7 +31,7 @@ export default class PostIndexItem extends React.Component {
               post={post}
               post_id={post.id} />
             {likes}
-            <div className='post-caption'><b>{post.user.username}</b> {post.caption}</div>
+            {caption}
             <CommentsContainer
               post={post}
               comments={comments}

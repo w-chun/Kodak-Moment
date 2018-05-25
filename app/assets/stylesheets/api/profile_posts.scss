@@ -2,6 +2,7 @@
   width: 300px;
   height: 300px;
   overflow: hidden;
+  margin: 0 28px 28px 0;
 }
 
 .profile-post-index-image {
@@ -9,4 +10,11 @@
   min-width: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.profile-posts-grid {
+  display: flex;
+  width: 1020px;
+  column-count: 3;
+  flex-flow: row wrap;
 }

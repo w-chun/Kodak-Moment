@@ -8,7 +8,7 @@ export default class ProfilePostIndex extends React.Component {
 
   render(){
     return (
-      <ul>
+      <ul className='profile-posts-grid'>
         {this.props.posts.sort(function(a,b) {
           return (b.id - a.id);
         })
