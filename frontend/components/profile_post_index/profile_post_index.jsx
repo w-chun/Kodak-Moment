@@ -15,7 +15,8 @@ export default class ProfilePostIndex extends React.Component {
           .map(post => (
           <ProfilePostIndexItem
             key={post.id}
-            post={post} />
+            post={post}
+            comments={post.comments} />
         ))}
       </ul>
     );

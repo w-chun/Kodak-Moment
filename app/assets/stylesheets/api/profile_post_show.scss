@@ -1,0 +1,51 @@
+.profile-post-show-container {
+  display: flex;
+}
+
+.profile-post-show {
+  display: flex;
+  flex-direction: column;
+  margin: 0 30px;
+  width: 287px;
+  justify-content: space-between;
+}
+
+.post-show-user {
+  display: flex;
+  align-items: center;
+}
+
+.post-show-user-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.post-show-user {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.post-likes-comments {
+  display: flex;
+  border-top: 1px solid #eee;
+  flex-direction: column;
+}
+
+.post-like-wrapper {
+  padding-top: 10px;
+}
+
+.post-age-wrapper {
+  border-bottom: 1px solid #eee;
+}
+
+.post-comment-form {
+  padding: 10px 0 20px 0;
+}
+
+.post-comment-input {
+  border: none;
+  font-size: 14px;
+}

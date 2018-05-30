@@ -11,6 +11,7 @@
   object-fit: cover;
   object-position: center;
 }
+
 .profile-post-hover {
   display: flex;
   position: absolute;
@@ -50,4 +51,9 @@
   width: 1020px;
   column-count: 3;
   flex-flow: row wrap;
+}
+
+.post-modal-close {
+  float: right;
+  padding: 10px 10px 0 0;
 }

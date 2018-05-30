@@ -1,14 +1,17 @@
 import React from 'react';
 import Modal from 'react-modal';
+import ProfilePostShowContainer from '../profile_post_show/profile_post_show_container';
 
 const customStyles = {
   content : {
     top                   : '50%',
     left                  : '50%',
-    right                 : 'auto',
+    right                 : '50%',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    padding               : '0',
+    border                : 'none'
   }
 };
 
@@ -49,7 +52,10 @@ export default class ProfilePostIndexItem extends React.Component {
           onClose={this.closeModal}
           style={customStyles}
           >
-        <div className='modal-close'><i className="fas fa-times" onClick={this.closeModal}></i></div>
+        <div className='post-modal-close'><i className="fas fa-times" onClick={this.closeModal}></i></div>
+        <ProfilePostShowContainer
+          post={post}
+          comments={post.comments} />
         </Modal>
       </div>
     );
