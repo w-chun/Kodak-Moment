@@ -30,6 +30,7 @@ export default class PostIndexItem extends React.Component {
             <LikeContainer
               post={post}
               post_id={post.id} />
+            <label htmlFor="comment" className='comment-button'><i className="far fa-comment"></i></label>
             {likes}
             {caption}
             <CommentsContainer

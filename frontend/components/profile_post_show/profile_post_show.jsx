@@ -66,11 +66,12 @@ export default class ProfilePostShow extends React.Component {
               <LikesContainer
               post={post}
               post_id={post.id} />
+            <label htmlFor="comment" className='comment-button'><i className="far fa-comment"></i></label>
             </div>
             {likes}
             <div className='post-age-wrapper'>{age}</div>
             <form onSubmit={this.handleComment} className='post-comment-form'>
-              <input type='text'
+              <input type='text' id='comment'
                 value={this.state.body}
                 onChange={this.update('body')}
                 placeholder='Add a comment...'
