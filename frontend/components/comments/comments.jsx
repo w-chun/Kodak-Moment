@@ -42,7 +42,7 @@ export default class Comments extends React.Component {
         {comments}
         {age}
         <form onSubmit={this.handleComment} className='comment-form'>
-          <input type='text' id='comment'
+          <input type='text' id={`comment-${post.id}`}
             value={this.state.body}
             onChange={this.update('body')}
             placeholder='Add a comment...'
