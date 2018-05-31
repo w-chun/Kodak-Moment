@@ -5,6 +5,7 @@ import ProfilePostShow from './profile_post_show';
 
 const mapStateToProps = (state, ownProps) => ({
   posts: Object.values(state.entities.posts),
+  postId: ownProps.post.id,
   postComments: selectComments(state, ownProps.post.id),
   currentUser: state.session.currentUser
 });
