@@ -36,7 +36,7 @@ export default class ProfilePostIndexItem extends React.Component {
         <img src={post.img_url} className='profile-post-index-image'></img>
         <Modal
           isOpen={this.state.modalIsOpen}
-          onClose={this.closeModal}
+          onRequestClose={this.closeModal}
           className='profile-post-modal'
           overlayClassName='profile-post-overlay'
           >

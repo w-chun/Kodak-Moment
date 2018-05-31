@@ -16,6 +16,7 @@ export default class Profile extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.userId !== nextProps.match.params.userId) {
       this.props.fetchUser(nextProps.match.params.userId);
+      this.props.fetchUserPosts(nextProps.match.params.userId);
     }
   }
 

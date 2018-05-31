@@ -58,7 +58,7 @@ export default class Greeting extends React.Component {
       </header>
       <Modal
         isOpen={this.state.modalIsOpen}
-        onClose={this.closeModal}
+        onRequestClose={this.closeModal}
         style={customStyles}
         >
         <div className='modal-close'><i className="fas fa-times" onClick={this.closeModal}></i></div>

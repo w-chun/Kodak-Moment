@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ProfilePostComments from './profile_post_comments';
 import LikesContainer from '../likes/likes_container';
 
@@ -47,8 +48,10 @@ export default class ProfilePostShow extends React.Component {
         <div className='profile-post-show'>
           <div>
             <div className='post-show-user'>
-              <img src={post.user.img_url} className='post-show-user-image'></img>
-              {post.user.username}
+              <Link to={`/users/${post.author_id}`} className='post-profile-link'>
+                <img src={post.user.img_url} className='post-show-user-image'></img></Link>
+              <Link to={`/users/${post.author_id}`} className='post-profile-link'>
+                {post.user.username}</Link>
             </div>
             <div className='post-show-comments'>
               {this.props.postComments.map(comment => (
