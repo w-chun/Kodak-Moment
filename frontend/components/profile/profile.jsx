@@ -1,10 +1,19 @@
 import React from 'react';
+import Modal from 'react-modal';
 import GreetingContainer from '../greeting/greeting_container';
 import ProfilePostIndexContainer from '../profile_post_index/profile_post_index_container';
 
 export default class Profile extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      followersIsOpen: false,
+      followeesIsOpen: false
+    };
+    this.openFollowersModal = this.openFollowersModal.bind(this);
+    this.closeFollowersModal = this.closeFollowersModal.bind(this);
+    this.openFolloweesModal = this.openFolloweesModal.bind(this);
+    this.closeFolloweesModal = this.closeFolloweesModal.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
   }
 
@@ -18,6 +27,22 @@ export default class Profile extends React.Component {
       this.props.fetchUser(nextProps.match.params.userId);
       this.props.fetchUserPosts(nextProps.match.params.userId);
     }
+  }
+
+  openFollowersModal() {
+    this.setState({followersIsOpen:true});
+  }
+
+  closeFollowersModal() {
+    this.setState({followersIsOpen:false});
+  }
+
+  openFolloweesModal() {
+    this.setState({followeesIsOpen:true});
+  }
+
+  closeFolloweesModal() {
+    this.setState({followeesIsOpen:false});
   }
 
   handleFollow(e) {
@@ -39,6 +64,7 @@ export default class Profile extends React.Component {
       followButton = <button onClick={this.handleFollow} className='follow-button'>Follow</button>;
     }
     const { user } = this.props;
+    console.log(user);
     return (
       <div className='profile-container-wrapper'>
         <GreetingContainer />
@@ -53,13 +79,33 @@ export default class Profile extends React.Component {
               </div>
               <div className='profile-stats'>
                 <div className='posts-count'><b>{this.props.postsCount}</b> posts</div>
-                <div className='followers-count'><b>{this.props.followersCount}</b> followers</div>
-                <div className='followees-count'><b>{this.props.followeesCount}</b> following</div>
+                <div className='followers-count' onClick={this.openFollowersModal}><b>{this.props.followersCount}</b> followers</div>
+                <div className='followees-count' onClick={this.openFolloweesModal}><b>{this.props.followeesCount}</b> following</div>
               </div>
             </div>
           </div>
           <ProfilePostIndexContainer />
         </div>
+        <Modal
+          isOpen={this.state.followersIsOpen}
+          onRequestClose={this.closeFollowersModal}
+          className='followers-modal'
+          overlayClassName='followers-overlay'
+          >
+          <div>
+            <h2>Followers</h2>
+          </div>
+        </Modal>
+        <Modal
+          isOpen={this.state.followeesIsOpen}
+          onRequestClose={this.closeFolloweesModal}
+          className='followers-modal'
+          overlayClassName='followers-overlay'
+          >
+          <div>
+            <h2>Following</h2>
+          </div>
+        </Modal>
       </div>
     );
   }
