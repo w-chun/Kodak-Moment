@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import GreetingContainer from '../greeting/greeting_container';
 import ProfilePostIndexContainer from '../profile_post_index/profile_post_index_container';
+import FollowsContainer from '../follows/follows_container';
 
 export default class Profile extends React.Component {
   constructor(props) {
@@ -64,7 +65,6 @@ export default class Profile extends React.Component {
       followButton = <button onClick={this.handleFollow} className='follow-button'>Follow</button>;
     }
     const { user } = this.props;
-    console.log(user);
     return (
       <div className='profile-container-wrapper'>
         <GreetingContainer />
@@ -93,7 +93,7 @@ export default class Profile extends React.Component {
           overlayClassName='followers-overlay'
           >
           <div>
-            <h2>Followers</h2>
+            <FollowsContainer followType='followers' />
           </div>
         </Modal>
         <Modal
@@ -103,7 +103,7 @@ export default class Profile extends React.Component {
           overlayClassName='followers-overlay'
           >
           <div>
-            <h2>Following</h2>
+            <FollowsContainer followType='followees' />
           </div>
         </Modal>
       </div>
