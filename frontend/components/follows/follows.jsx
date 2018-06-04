@@ -5,9 +5,9 @@ import FolloweesIndexItem from './followees_index_item';
 export default class Follows extends React.Component {
   followers() {
     return (
-      <div>
-        <div>Followers</div>
-        <ul>
+      <div className='follows-wrapper'>
+        <div className='follows-title'>Followers</div>
+        <ul className='follows-index-item-wrapper'>
           { this.props.user.followers.map(follower => (
             <FollowersIndexItem
               key={follower.follower_id}
@@ -22,9 +22,9 @@ export default class Follows extends React.Component {
 
   followees() {
     return (
-      <div>
-        <div>Followees</div>
-        <ul>
+      <div className='follows-wrapper'>
+        <div className='follows-title'>Followees</div>
+        <ul className='follows-index-item-wrapper'>
           { this.props.user.followees.map(followee => (
             <FolloweesIndexItem
               key={followee.followee_id}

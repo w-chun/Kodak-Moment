@@ -4,10 +4,10 @@ export default class FolloweesIndexItem extends React.Component {
   render () {
     const { followee } = this.props;
     return (
-      <li>
-        <div>
-          <img src={`${followee.profile_pic}`}></img>
-          { followee.username }
+      <li className='follows-index-item'>
+        <div className='follows-info'>
+          <img src={`${followee.profile_pic}`} className='follows-pic'></img>
+          <div className='follows-username'>{ followee.username }</div>
         </div>
       </li>
     );

@@ -93,6 +93,7 @@ export default class Profile extends React.Component {
           overlayClassName='followers-overlay'
           >
           <div>
+            <div className='follows-modal-close'><i className="fas fa-times" onClick={this.closeFollowersModal}></i></div>
             <FollowsContainer followType='followers' />
           </div>
         </Modal>
@@ -103,6 +104,7 @@ export default class Profile extends React.Component {
           overlayClassName='followers-overlay'
           >
           <div>
+            <div className='follows-modal-close'><i className="fas fa-times" onClick={this.closeFolloweesModal}></i></div>
             <FollowsContainer followType='followees' />
           </div>
         </Modal>

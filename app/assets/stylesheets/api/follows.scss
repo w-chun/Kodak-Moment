@@ -1,0 +1,45 @@
+.follows-wrapper {
+  width: 600px;
+}
+
+.follows-title {
+  font-size: 16px;
+  padding: 16px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.follows-index-item-wrapper {
+  padding: 0;
+}
+
+.follows-index-item {
+  display: flex;
+  border-bottom: 1px solid #efefef;
+  padding: 8px 16px;
+  list-style: none;
+}
+
+.follows-index-item:first-child {
+  margin-top: -15px;
+}
+
+.follows-info {
+  display: flex;
+  align-items: center;
+}
+
+.follows-pic {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.follows-username {
+  padding-left: 10px;
+}
+
+.follows-modal-close {
+  float: right;
+  padding: 10px 10px 0 0;
+  color: #ddd;
+}
