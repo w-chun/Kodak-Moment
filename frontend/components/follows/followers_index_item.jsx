@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class FollowersIndexItem extends React.Component {
   render () {
@@ -6,8 +7,12 @@ export default class FollowersIndexItem extends React.Component {
     return (
       <li className='follows-index-item'>
         <div className='follows-info'>
-          <img src={`${follower.profile_pic}`} className='follows-pic'></img>
-          <div className='follows-username'>{ follower.username }</div>
+          <Link to={`/users/${follower.follower_id}`} className='follows-nav-link'>
+            <img src={`${follower.profile_pic}`} className='follows-pic'></img>
+          </Link>
+          <Link to={`/users/${follower.follower_id}`} className='follows-nav-link'>
+            <div className='follows-username'>{ follower.username }</div>
+          </Link>
         </div>
       </li>
     );

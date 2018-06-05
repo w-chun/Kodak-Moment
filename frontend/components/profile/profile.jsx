@@ -28,6 +28,8 @@ export default class Profile extends React.Component {
       this.props.fetchUser(nextProps.match.params.userId);
       this.props.fetchUserPosts(nextProps.match.params.userId);
     }
+    this.setState({followersIsOpen:false});
+    this.setState({followeesIsOpen:false});
   }
 
   openFollowersModal() {
@@ -91,6 +93,7 @@ export default class Profile extends React.Component {
           onRequestClose={this.closeFollowersModal}
           className='followers-modal'
           overlayClassName='followers-overlay'
+          shouldCloseOnOverlayClick={true}
           >
           <div>
             <div className='follows-modal-close'><i className="fas fa-times" onClick={this.closeFollowersModal}></i></div>
