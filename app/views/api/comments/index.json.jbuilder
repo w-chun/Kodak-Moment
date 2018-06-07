@@ -4,6 +4,6 @@
     json.body comment.body
     json.author_id comment.author_id
     json.commenter comment.commenter.username
-    json.post_id comment.post.id
+    json.post_id comment.post_id
   end
 end

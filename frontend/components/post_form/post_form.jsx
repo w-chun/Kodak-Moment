@@ -1,22 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
 
 export default class PostForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       img_url: '',
-      caption: ''
+      caption: '',
+      modalIsOpen: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.uploadPhoto = this.uploadPhoto.bind(this);
     this.logout = this.logout.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  componentWillMount() {
+    Modal.setAppElement('body');
+  }
+
+  openModal() {
+    this.setState({modalIsOpen:true});
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen:false});
   }
 
   handleSubmit(e){
     e.preventDefault();
     const post = Object.assign({}, this.state);
-    this.props.createPost(post);
+    this.props.createPost(post).then(this.props.history.push('/'));
+    this.closeModal();
   }
 
   update(field){
@@ -48,19 +76,29 @@ export default class PostForm extends React.Component {
   render() {
     return (
       <div>
-        <div className='post-form-wrapper'>
-        <form onSubmit={this.handleSubmit} className='post-form'>
-          <img src={this.state.img_url} className='img-preview'></img>
-          <input type='file'
-            onClick={this.uploadPhoto} className='file-button'></input>
-          <textarea
-            value={this.state.caption}
-            onChange={this.update('caption')}
-            placeholder='Caption'
-            className='caption' />
-          <input type='submit' value='Share' className='share-button' />
-        </form>
-        </div>
+        <button onClick={this.openModal} className='upload-button'><i className="fas fa-upload"></i>Upload</button>
+
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          >
+          <div className='modal-close'><i className="fas fa-times" onClick={this.closeModal}></i></div>
+
+          <div className='post-form-wrapper'>
+          <form onSubmit={this.handleSubmit} className='post-form'>
+            <img src={this.state.img_url} className='img-preview'></img>
+            <input type='file'
+              onClick={this.uploadPhoto} className='file-button'></input>
+            <textarea
+              value={this.state.caption}
+              onChange={this.update('caption')}
+              placeholder='Caption'
+              className='caption' />
+            <input type='submit' value='Share' className='share-button' />
+          </form>
+          </div>
+        </Modal>
       </div>
   );
   }

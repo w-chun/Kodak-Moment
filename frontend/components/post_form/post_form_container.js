@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { createPost } from '../../actions/posts_actions';
 import { logout } from '../../actions/session_actions';
 import PostForm from './post_form';
@@ -12,7 +13,7 @@ const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout())
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(PostForm);
+)(PostForm));
