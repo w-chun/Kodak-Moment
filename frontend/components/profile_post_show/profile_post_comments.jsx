@@ -19,7 +19,7 @@ export default class ProiflePostComments extends React.Component {
       deleteButton = <div className='delete-button'><i className="fas fa-times" onClick={this.deleteComment}></i></div>;
     }
     return (
-      <ul>
+      <ul className='profile-comment-list'>
         <li className='comment-index-item'>
           <div className='comment'>
             <div><Link to={`/users/${comment.author_id}`} className='post-profile-link'>

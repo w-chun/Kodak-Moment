@@ -33,6 +33,7 @@ export default class ProfilePostShow extends React.Component {
   render() {
     let age;
     let likes;
+    let caption;
     const { post, comments, currentUser, deleteComment } = this.props;
     if (this.props.post.age) {
       age = <div className='post-age'>{post.age} ago</div>;
@@ -41,6 +42,11 @@ export default class ProfilePostShow extends React.Component {
       likes = <div className='likes-counter'>{post.likes} like</div>;
     } else if (post.likes > 0) {
       likes = <div className='likes-counter'>{post.likes} likes</div>;
+    }
+    if (post.caption) {
+      caption = <div className='post-show-caption'>
+                  <b>{post.user.username}</b> {post.caption}
+                </div>;
     }
     return (
       <div className='profile-post-show-container'>
@@ -53,15 +59,18 @@ export default class ProfilePostShow extends React.Component {
               <Link to={`/users/${post.author_id}`} className='post-profile-link'>
                 {post.user.username}</Link>
             </div>
-            <div className='post-show-comments'>
-              {this.props.postComments.map(comment => (
-                <ProfilePostComments
-                  key={comment.id}
-                  comment={comment}
-                  currentUser={currentUser}
-                  deleteComment={deleteComment} />
-              ))
-              }
+            <div className='post-caption-comments'>
+              {caption}
+              <div className='post-show-comments'>
+                {this.props.postComments.map(comment => (
+                  <ProfilePostComments
+                    key={comment.id}
+                    comment={comment}
+                    currentUser={currentUser}
+                    deleteComment={deleteComment} />
+                ))
+                }
+              </div>
             </div>
           </div>
           <div className='post-likes-comments'>
