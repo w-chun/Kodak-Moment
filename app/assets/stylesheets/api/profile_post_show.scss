@@ -1,5 +1,6 @@
 .profile-post-show-container {
   display: flex;
+  max-height: 500px;
 }
 
 .profile-post-show {
@@ -10,14 +11,11 @@
   justify-content: space-between;
 }
 
-.post-show-image {
-  margin-bottom: -4px;
-}
-
 .post-show-image img {
   width: auto;
   max-height: 500px;
   max-width: 600px;
+  height: 100%;
 }
 
 .post-show-user {
@@ -62,7 +60,9 @@
 }
 
 .post-caption-comments {
-  padding-top: 12px;
+  padding: 12px 0;
+  height: 260px;
+  overflow: scroll;
 }
 
 .profile-comment-list {
