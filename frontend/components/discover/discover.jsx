@@ -13,24 +13,26 @@ export default class Discover extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='discover-container-wrapper'>
         <GreetingContainer />
-        <div>
-          Discover People
-        </div>
-        <div>
-          Explore
-          <ul>
-            {this.props.posts.sort(function(a,b) {
-              return Math.random(b.id - a.id);
-            })
-            .map(post => (
-              <DiscoverIndexItem
-                key={post.id}
-                post={post} />
-            ))
-            }
-          </ul>
+        <div className='discover-container'>
+          <div>
+            <h1 className='discover-titles'>Discover People</h1>
+          </div>
+          <div className='explore-container'>
+            <h1 className='discover-titles'>Explore</h1>
+            <ul className='explore-grid'>
+              {this.props.posts.sort(function(a,b) {
+                return Math.random(b.id - a.id);
+              })
+              .map(post => (
+                <DiscoverIndexItem
+                  key={post.id}
+                  post={post} />
+              ))
+              }
+            </ul>
+          </div>
         </div>
       </div>
     );

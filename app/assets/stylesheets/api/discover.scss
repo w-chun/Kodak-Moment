@@ -1,0 +1,42 @@
+.discover-container-wrapper {
+  margin-top: 137px;
+}
+
+.discover-container {
+  margin: auto;
+  max-width: 1020px;
+}
+
+.discover-titles {
+  color: #999;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+  line-height: 18px;
+}
+
+.explore-container {
+  width: 100%;
+}
+
+.explore-grid {
+  display: flex;
+  width: 1020px;
+  column-count: 3;
+  flex-flow: row wrap;
+  padding: 0;
+}
+
+.discover-index-item {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  margin: 0 28px 28px 0;
+}
+
+.discover-img {
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
