@@ -12,7 +12,7 @@
   object-position: center;
 }
 
-.profile-post-hover {
+.profile-post-hover, .discover-index-hover {
   display: flex;
   position: absolute;
   justify-content: space-around;
@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 
-.profile-post-hover:hover {
+.profile-post-hover:hover, .discover-index-hover:hover {
   background: black;
   opacity: 0.5;
   color: white;
@@ -54,7 +54,7 @@
   padding: 0;
 }
 
-.profile-post-modal {
+.profile-post-modal, .discover-index-modal {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -66,7 +66,7 @@
   max-height: 100%;
 }
 
-.profile-post-overlay {
+.profile-post-overlay, .discover-index-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -76,7 +76,7 @@
   z-index: 2;
 }
 
-.post-modal-close {
+.post-modal-close, .discover-modal-close {
   float: right;
   padding: 10px 10px 0 0;
   color: #eee;
