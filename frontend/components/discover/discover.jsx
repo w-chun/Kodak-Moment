@@ -26,17 +26,19 @@ export default class Discover extends React.Component {
         <div className='discover-container'>
           <div>
             <h1 className='discover-titles'>Discover People</h1>
-            {this.props.users.sort(function(a,b) {
-              return Math.floor(Math.random(b.id - a.id) * 10);
-            })
-              .filter(user => user.followed === false)
-              .map(user => (
-              <DiscoverIndexItem
-                key={user.id}
-                user={user} />
-            ))
-              .slice(0,3)
-            }
+            <ul className='discover-grid'>
+              {this.props.users.sort(function(a,b) {
+                return Math.floor(Math.random(b.id - a.id) * 10);
+              })
+                .filter(user => user.followed === false)
+                .map(user => (
+                <DiscoverIndexItem
+                  key={user.id}
+                  user={user} />
+              ))
+                .slice(0,3)
+              }
+            </ul>
           </div>
           <div className='explore-container'>
             <h1 className='discover-titles'>Explore</h1>
