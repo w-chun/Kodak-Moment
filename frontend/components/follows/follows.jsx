@@ -23,7 +23,7 @@ export default class Follows extends React.Component {
   followees() {
     return (
       <div className='follows-wrapper'>
-        <div className='follows-title'>Followees</div>
+        <div className='follows-title'>Following</div>
         <ul className='follows-index-item-wrapper'>
           { this.props.user.followees.map(followee => (
             <FolloweesIndexItem

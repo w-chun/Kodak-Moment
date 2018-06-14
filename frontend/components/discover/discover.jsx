@@ -14,7 +14,7 @@ export default class Discover extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.userId !== nextProps.match.params.userId) {
+    if (this.props.match.params !== nextProps.match.params) {
       this.props.fetchUsers();
     }
   }
@@ -34,7 +34,10 @@ export default class Discover extends React.Component {
                 .map(user => (
                 <DiscoverIndexItem
                   key={user.id}
-                  user={user} />
+                  user={user}
+                  currentUser={this.props.currentUser}
+                  createFollow={this.props.createFollow}
+                  deleteFollow={this.props.deleteFollow} />
               ))
                 .slice(0,3)
               }
