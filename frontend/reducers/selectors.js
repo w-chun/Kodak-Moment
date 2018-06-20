@@ -13,3 +13,7 @@ export const selectComments = (state, postId) => {
     );
   return postComments;
 };
+
+export const selectUser = ({ users }, id) => {
+  return users[id];
+};

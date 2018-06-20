@@ -13,12 +13,6 @@ export default class Discover extends React.Component {
     this.props.fetchUsers();
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.match.params !== nextProps.match.params) {
-      this.props.fetchUsers();
-    }
-  }
-
   render() {
     return (
       <div className='discover-container-wrapper'>
@@ -47,7 +41,7 @@ export default class Discover extends React.Component {
             <h1 className='discover-titles'>Explore</h1>
             <ul className='explore-grid'>
               {this.props.posts.sort(function(a,b) {
-                return Math.random(b.id - a.id);
+                return Math.floor(Math.random(b.id - a.id) * 10);
               })
               .map(post => (
                 <ExploreIndexItem

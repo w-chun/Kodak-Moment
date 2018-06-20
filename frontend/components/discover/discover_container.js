@@ -4,13 +4,9 @@ import { fetchUsers, createFollow, deleteFollow } from '../../actions/user_actio
 import Discover from './discover';
 
 const mapStateToProps = (state) => {
-  let usersObject = state.entities.users;
-  if (state.entities.users.users) {
-    usersObject = state.entities.users.users;
-  }
   return {
     posts: Object.values(state.entities.posts),
-    users: Object.values(usersObject),
+    users: Object.values(state.entities.users),
     currentUser: state.session.currentUser
   };
 };
