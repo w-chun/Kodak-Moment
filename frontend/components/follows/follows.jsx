@@ -4,34 +4,40 @@ import FolloweesIndexItem from './followees_index_item';
 
 export default class Follows extends React.Component {
   followers() {
+    let followers;
+    if (this.props.user) {
+      followers = this.props.user.followers.map(follower => (
+        <FollowersIndexItem
+          key={follower.follower_id}
+          follower={follower}
+          followType='followers' />
+      ));
+    }
     return (
       <div className='follows-wrapper'>
         <div className='follows-title'>Followers</div>
         <ul className='follows-index-item-wrapper'>
-          { this.props.user.followers.map(follower => (
-            <FollowersIndexItem
-              key={follower.follower_id}
-              follower={follower}
-              followType='followers' />
-            ))
-          }
+          { followers }
         </ul>
       </div>
     );
   }
 
   followees() {
+    let followees;
+    if (this.props.user) {
+      followees = this.props.user.followees.map(followee => (
+        <FolloweesIndexItem
+          key={followee.followee_id}
+          followee={followee}
+          followType='followees' />
+      ));
+    }
     return (
       <div className='follows-wrapper'>
         <div className='follows-title'>Following</div>
         <ul className='follows-index-item-wrapper'>
-          { this.props.user.followees.map(followee => (
-            <FolloweesIndexItem
-              key={followee.followee_id}
-              followee={followee}
-              followType='followees' />
-            ))
-          }
+          { followees }
         </ul>
       </div>
     );
