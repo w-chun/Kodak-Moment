@@ -8,10 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   const userId = ownProps.match.params.userId;
   const user = selectUser(state.entities, userId);
   return {
-  user: state.entities.users,
-  postsCount: state.entities.users.posts_count,
-  followersCount: state.entities.users.followers_count,
-  followeesCount: state.entities.users.followees_count,
+  user: user,
   followed: state.entities.users.followed,
   currentUser: state.session.currentUser
   };
