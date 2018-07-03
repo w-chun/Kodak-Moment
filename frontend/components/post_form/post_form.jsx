@@ -2,17 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
-
 export default class PostForm extends React.Component {
   constructor(props){
     super(props);
@@ -81,7 +70,8 @@ export default class PostForm extends React.Component {
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
-          style={customStyles}
+          className='post-form-modal'
+          overlayClassName='post-form-overlay'
           >
           <div className='modal-close'><i className="fas fa-times" onClick={this.closeModal}></i></div>
 
