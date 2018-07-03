@@ -88,8 +88,8 @@ export default class PostForm extends React.Component {
           <div className='post-form-wrapper'>
           <form onSubmit={this.handleSubmit} className='post-form'>
             <img src={this.state.img_url} className='img-preview'></img>
-            <input type='file'
-              onClick={this.uploadPhoto} className='file-button'></input>
+            <button
+              onClick={this.uploadPhoto} className='file-button'>Choose File</button>
             <textarea
               value={this.state.caption}
               onChange={this.update('caption')}
