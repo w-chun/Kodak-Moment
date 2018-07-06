@@ -75,7 +75,7 @@ export default class ProfileUpdate extends React.Component {
                 <button
                   onClick={this.uploadPhoto} className='profile-update-button'>Edit Profile Photo</button>
               </div>
-              <div className='profile-username-edit'>Username <input type='text' value={this.state.username} onChange={this.update("username")} /></div>
+              <div className='profile-username-edit'><span className='username-label'>Username</span><input type='text' value={this.state.username} onChange={this.update("username")} /></div>
             </div>
             <input type='submit' value='Update' className='share-button' />
           </form>
