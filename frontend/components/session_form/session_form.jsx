@@ -59,12 +59,46 @@ export default class SessionForm extends React.Component {
     }
   }
 
+  handleDemo() {
+    return (e) => {
+      e.preventDefault();
+      this.setState({username: "", password: ""});
+      const username = 'user1'.split('');
+      const password = 'password'.split('');
+      const demoInterval = setInterval(() => {
+        if (username.length > 0) {
+          this.setState({
+            username: this.state.username + username.shift()
+          }) ;
+        } else if (password.length > 0) {
+          this.setState({
+            password: this.state.password + password.shift()
+          });
+        } else {
+          const user = Object.assign({}, this.state);
+          clearInterval(demoInterval);
+          this.props.processForm(user, 'login');
+        }
+      }, 100);
+    };
+  }
+
+  loginDemo(){
+    return(e) => {
+      e.preventDefault();
+      const user = {username: "user1", password: "password"};
+      this.props.processForm(user, 'login');
+    };
+  }
+
   render() {
     let button;
     let emailForm;
     let message;
     let navLogin;
     let navSignup;
+    let demoSignup;
+    let demologin;
     if (this.props.formType === 'signup') {
       button = 'Sign Up';
       emailForm = (
@@ -76,9 +110,21 @@ export default class SessionForm extends React.Component {
       );
       message = <p className='message'>Sign up to see Kodaks from your friends</p>;
       navLogin = (<p>Have an account? <Link to='login' className='nav-login-link'>Log In</Link></p>);
+      demoSignup = <div className='demo-login-wrapper'>
+                    <div className='session-or'>
+                      <span className='or'>or</span>
+                    </div>
+                    <button className="demo-signup" onClick={this.loginDemo()}>Login with Demo</button>
+                  </div>;
     } else {
       button = 'Log In';
       navSignup = (<p>Don't have an account? <Link to='signup' className='nav-signup-link'>Sign Up</Link></p>);
+      demologin = <div className='demo-login-wrapper'>
+                    <div className='session-or'>
+                      <span className='or'>or</span>
+                    </div>
+                    <button className="demo-login" onClick={this.handleDemo()}>Login with Demo</button>
+                  </div>;
     }
 
     return (
@@ -87,6 +133,7 @@ export default class SessionForm extends React.Component {
           <div className='session-form'>
           <h1 className='home-header'>Kodak Moment</h1>
           {message}
+          {demoSignup}
           <input type='text'
             value={this.state.username}
             onChange={this.update('username')}
@@ -100,6 +147,7 @@ export default class SessionForm extends React.Component {
             required='true' />
           <input type='submit' value={button} className='submit-button'/>
           {this.renderErrors()}
+          {demologin}
           </div>
           <div className='nav-login'>{navLogin}</div>
           <div className='nav-signup'>{navSignup}</div>

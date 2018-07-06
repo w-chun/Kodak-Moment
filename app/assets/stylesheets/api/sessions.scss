@@ -36,6 +36,7 @@
 .submit-button {
   background: #3897f0;
   color: #fff;
+  cursor: pointer;
 }
 
 .nav-login, .nav-signup {
@@ -83,4 +84,41 @@
 
 .errors-list li {
   margin-top: 5px;
+}
+
+.session-or {
+  border-bottom: 1px solid #efefef;
+  margin: 20px 0 10px 0;
+  line-height: 0.1em;
+}
+
+.or {
+  color: #999;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #fff;
+  padding: 0 18px;
+  text-transform: uppercase;
+}
+
+.demo-login {
+  margin-top: 10px;
+  color: #385185;
+  width: 100%;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.demo-signup {
+  margin: 10px 0 20px 0;
+  padding: 0 12px;
+  line-height: 26px;
+  color: #fff;
+  background: #3897f0;
+  width: 100%;
+  border-color: #3897f0;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
 }
