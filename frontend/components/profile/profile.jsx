@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import GreetingContainer from '../greeting/greeting_container';
 import ProfilePostIndexContainer from '../profile_post_index/profile_post_index_container';
 import FollowsContainer from '../follows/follows_container';
+import ProfileUpdateContainer from '../profile_update/profile_update_container';
 
 export default class Profile extends React.Component {
   constructor(props) {
@@ -58,12 +59,11 @@ export default class Profile extends React.Component {
   }
 
   userProfile() {
-    console.log(this.props.user);
     let followButton;
     if (this.props.user.followed) {
       followButton = <button onClick={this.handleFollow} className='follow-button'>Following</button>;
-    } else if (this.props.user.id == this.props.currentUser.id) {
-      followButton = <button className='follow-button'>Edit Profile</button>;
+    } else if (this.props.user.id === this.props.currentUser.id) {
+      followButton = <ProfileUpdateContainer user={this.props.user} />;
     } else {
       followButton = <button onClick={this.handleFollow} className='follow-button'>Follow</button>;
     }

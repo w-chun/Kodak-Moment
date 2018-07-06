@@ -35,6 +35,11 @@ export const fetchUsers = () => dispatch => (
     .then(users => dispatch(receiveUsers(users)))
 );
 
+export const updateUser = (user) => dispatch => (
+  APIUserUtil.updateUser(user)
+    .then(updatedUser => dispatch(receiveUser(updatedUser)))
+);
+
 export const fetchFollowers = (userId) => dispatch => (
   APIUserUtil.fetchFollowers(userId)
     .then(followers => dispatch(receiveFollowers(followers)))

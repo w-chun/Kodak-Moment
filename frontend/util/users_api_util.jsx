@@ -12,6 +12,14 @@ export const fetchUsers = () => (
   })
 );
 
+export const updateUser = (user) => (
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/users/${user.id}`,
+    data: { user }
+  })
+);
+
 export const fetchFollowers = (userId) => (
   $.ajax({
     method: 'GET',
