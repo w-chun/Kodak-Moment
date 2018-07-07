@@ -2,8 +2,29 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default class FolloweesIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleFollow = this.handleFollow.bind(this);
+  }
+
+  handleFollow(e) {
+    e.preventDefault();
+    if (this.props.followee.followed) {
+      this.props.deleteFollow(this.props.followee.followee_id, this.props.currentUser.id);
+    } else {
+      this.props.createFollow(this.props.followee.followee_id, this.props.currentUser.id);
+    }
+  }
+
   render () {
+    console.log(this.props);
+    let followButton;
     const { followee } = this.props;
+    if (this.props.followee.followed) {
+      followButton = <button onClick={this.handleFollow} className='followees-follow-button'>Following</button>;
+    } else {
+      followButton = <button onClick={this.handleFollow} className='followees-follow-button'>Follow</button>;
+    }
     return (
       <li className='follows-index-item'>
         <div className='follows-info'>
@@ -13,6 +34,7 @@ export default class FolloweesIndexItem extends React.Component {
           <Link to={`/users/${followee.followee_id}`} className='follows-nav-link'>
             <div className='follows-username'>{ followee.username }</div>
           </Link>
+          {followButton}
         </div>
       </li>
     );

@@ -10,7 +10,10 @@ export default class Follows extends React.Component {
         <FollowersIndexItem
           key={follower.follower_id}
           follower={follower}
-          followType='followers' />
+          followType='followers'
+          currentUser={this.props.currentUser}
+          createFollow={this.props.createFollow}
+          deleteFollow={this.props.deleteFollow} />
       ));
     }
     return (
@@ -30,7 +33,10 @@ export default class Follows extends React.Component {
         <FolloweesIndexItem
           key={followee.followee_id}
           followee={followee}
-          followType='followees' />
+          followType='followees'
+          currentUser={this.props.currentUser}
+          createFollow={this.props.createFollow}
+          deleteFollow={this.props.deleteFollow} />
       ));
     }
     return (
