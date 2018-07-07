@@ -17,7 +17,6 @@ export default class FolloweesIndexItem extends React.Component {
   }
 
   render () {
-    console.log(this.props);
     let followButton;
     const { followee } = this.props;
     if (this.props.followee.followed) {
@@ -28,13 +27,15 @@ export default class FolloweesIndexItem extends React.Component {
     return (
       <li className='follows-index-item'>
         <div className='follows-info'>
-          <Link to={`/users/${followee.followee_id}`} className='follows-nav-link'>
-            <img src={`${followee.profile_pic}`} className='follows-pic'></img>
-          </Link>
-          <Link to={`/users/${followee.followee_id}`} className='follows-nav-link'>
-            <div className='follows-username'>{ followee.username }</div>
-          </Link>
-          {followButton}
+          <div className='follows-user'>
+            <Link to={`/users/${followee.followee_id}`} className='follows-nav-link'>
+              <img src={`${followee.profile_pic}`} className='follows-pic'></img>
+            </Link>
+            <Link to={`/users/${followee.followee_id}`} className='follows-nav-link'>
+              <div className='follows-username'>{ followee.username }</div>
+            </Link>
+          </div>
+          <div className='follows-button'>{followButton}</div>
         </div>
       </li>
     );

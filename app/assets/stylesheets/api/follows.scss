@@ -25,7 +25,8 @@
 
 .follows-info {
   display: flex;
-  align-items: center;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .follows-pic {
@@ -47,4 +48,23 @@
 .follows-nav-link {
   text-decoration: none;
   color: black;
+}
+
+.follows-user {
+  display: flex;
+  align-items: center;
+}
+
+.follows-button {
+  display: flex;
+}
+
+.followers-follow-button, .followees-follow-button {
+  padding: 0 12px;
+  cursor: pointer;
+  border-color: #dbdbdb;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 600;
 }
