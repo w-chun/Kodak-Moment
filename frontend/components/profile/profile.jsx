@@ -29,8 +29,8 @@ export default class Profile extends React.Component {
       this.props.fetchUser(nextProps.match.params.userId);
       this.props.fetchUserPosts(nextProps.match.params.userId);
     }
-    this.setState({followersIsOpen:false});
-    this.setState({followeesIsOpen:false});
+    // this.setState({followersIsOpen:false});
+    // this.setState({followeesIsOpen:false});
   }
 
   openFollowersModal() {
@@ -112,7 +112,9 @@ export default class Profile extends React.Component {
           >
           <div>
             <div className='follows-modal-close'><i className="fas fa-times" onClick={this.closeFollowersModal}></i></div>
-            <FollowsContainer followType='followers' user={user} />
+            <FollowsContainer
+              followType='followers'
+              user={user} />
           </div>
         </Modal>
         <Modal
@@ -123,7 +125,9 @@ export default class Profile extends React.Component {
           >
           <div>
             <div className='follows-modal-close'><i className="fas fa-times" onClick={this.closeFolloweesModal}></i></div>
-            <FollowsContainer followType='followees' user={user}/>
+            <FollowsContainer
+              followType='followees'
+              user={user} />
           </div>
         </Modal>
       </div>

@@ -13,6 +13,12 @@ export default class Discover extends React.Component {
     this.props.fetchUsers();
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.props.users.length !== newProps.users.length) {
+      this.props.fetchUsers();
+    }
+  }
+
   render() {
     return (
       <div className='discover-container-wrapper'>

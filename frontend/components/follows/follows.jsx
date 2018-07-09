@@ -3,6 +3,12 @@ import FollowersIndexItem from './followers_index_item';
 import FolloweesIndexItem from './followees_index_item';
 
 export default class Follows extends React.Component {
+  componentWillReceiveProps(nextProps) {
+    if (this.props.users !== nextProps.users) {
+      this.props.fetchUser(this.props.currentUser.id);
+    }
+  }
+
   followers() {
     let followers;
     if (this.props.user) {
