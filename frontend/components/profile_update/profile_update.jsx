@@ -57,7 +57,7 @@ export default class ProfileUpdate extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.openModal} className='follow-button'>Edit Profile</button>
+        <button onClick={this.openModal} className='following-button'>Edit Profile</button>
 
         <Modal
           isOpen={this.state.modalIsOpen}

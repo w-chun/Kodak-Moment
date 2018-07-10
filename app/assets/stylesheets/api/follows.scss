@@ -67,4 +67,16 @@
   font-size: 14px;
   line-height: 26px;
   font-weight: 600;
+  background: #3897f0;
+  color: #fff;
+}
+
+.followers-following-button, .followees-following-button {
+  padding: 0 12px;
+  cursor: pointer;
+  border-color: #dbdbdb;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 600;
 }

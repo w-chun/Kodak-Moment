@@ -20,7 +20,7 @@ export default class FollowersIndexItem extends React.Component {
     let followButton;
     const { follower } = this.props;
     if (this.props.follower.followed) {
-      followButton = <button onClick={this.handleFollow} className='followers-follow-button'>Following</button>;
+      followButton = <button onClick={this.handleFollow} className='followers-following-button'>Following</button>;
     } else {
       followButton = <button onClick={this.handleFollow} className='followers-follow-button'>Follow</button>;
     }
