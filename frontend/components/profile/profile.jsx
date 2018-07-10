@@ -29,9 +29,9 @@ export default class Profile extends React.Component {
     if (this.props.match.params.userId !== nextProps.match.params.userId) {
       this.props.fetchUser(nextProps.match.params.userId);
       this.props.fetchUserPosts(nextProps.match.params.userId);
+      this.setState({followersIsOpen:false});
+      this.setState({followeesIsOpen:false});
     }
-    // this.setState({followersIsOpen:false});
-    // this.setState({followeesIsOpen:false});
   }
 
   openFollowersModal() {
