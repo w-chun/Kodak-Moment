@@ -3,6 +3,7 @@ import * as APIPostsUtil from '../util/posts_api_util';
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const REMOVE_POST = 'REMOVE_POST';
+export const START_LOADING_POSTS = 'START_LOADING_POSTS';
 
 export const receivePosts = posts => ({
   type: RECEIVE_POSTS,
@@ -19,10 +20,15 @@ export const removePost = postId => ({
   postId
 });
 
-export const fetchPosts = () => dispatch => (
+export const startLoadingPosts = () => ({
+  type: START_LOADING_POSTS,
+});
+
+export const fetchPosts = () => dispatch => {
+  dispatch(startLoadingPosts());
   APIPostsUtil.fetchPosts()
-    .then(posts => dispatch(receivePosts(posts)))
-);
+    .then(posts => dispatch(receivePosts(posts)));
+};
 
 export const fetchPost = () => dispatch => (
   APIPostsUtil.fetchPost()

@@ -4,6 +4,7 @@ import GreetingContainer from '../greeting/greeting_container';
 import ProfilePostIndexContainer from '../profile_post_index/profile_post_index_container';
 import FollowsContainer from '../follows/follows_container';
 import ProfileUpdateContainer from '../profile_update/profile_update_container';
+import Loading from '../loading';
 
 export default class Profile extends React.Component {
   constructor(props) {
@@ -91,46 +92,50 @@ export default class Profile extends React.Component {
       profilePic = <div className='user-profile-pic'><img src={user.img_url}></img></div>;
       profile = this.userProfile();
     }
-    return (
-      <div className='profile-container-wrapper'>
-        <GreetingContainer />
-        <div className='profile-container'>
-          <div className='profile-info'>
-            <div className='user-profile-pic-wrapper'>
-              {profilePic}
+    if (this.props.loading) {
+      return <Loading />;
+    } else {
+      return (
+        <div className='profile-container-wrapper'>
+          <GreetingContainer />
+          <div className='profile-container'>
+            <div className='profile-info'>
+              <div className='user-profile-pic-wrapper'>
+                {profilePic}
+              </div>
+              {profile}
             </div>
-            {profile}
+            <ProfilePostIndexContainer />
           </div>
-          <ProfilePostIndexContainer />
+          <Modal
+            isOpen={this.state.followersIsOpen}
+            onRequestClose={this.closeFollowersModal}
+            className='followers-modal'
+            overlayClassName='followers-overlay'
+            shouldCloseOnOverlayClick={true}
+            >
+            <div>
+              <div className='follows-modal-close'><i className="fas fa-times" onClick={this.closeFollowersModal}></i></div>
+              <FollowsContainer
+                followType='followers'
+                user={user} />
+            </div>
+          </Modal>
+          <Modal
+            isOpen={this.state.followeesIsOpen}
+            onRequestClose={this.closeFolloweesModal}
+            className='followers-modal'
+            overlayClassName='followers-overlay'
+            >
+            <div>
+              <div className='follows-modal-close'><i className="fas fa-times" onClick={this.closeFolloweesModal}></i></div>
+              <FollowsContainer
+                followType='followees'
+                user={user} />
+            </div>
+          </Modal>
         </div>
-        <Modal
-          isOpen={this.state.followersIsOpen}
-          onRequestClose={this.closeFollowersModal}
-          className='followers-modal'
-          overlayClassName='followers-overlay'
-          shouldCloseOnOverlayClick={true}
-          >
-          <div>
-            <div className='follows-modal-close'><i className="fas fa-times" onClick={this.closeFollowersModal}></i></div>
-            <FollowsContainer
-              followType='followers'
-              user={user} />
-          </div>
-        </Modal>
-        <Modal
-          isOpen={this.state.followeesIsOpen}
-          onRequestClose={this.closeFolloweesModal}
-          className='followers-modal'
-          overlayClassName='followers-overlay'
-          >
-          <div>
-            <div className='follows-modal-close'><i className="fas fa-times" onClick={this.closeFolloweesModal}></i></div>
-            <FollowsContainer
-              followType='followees'
-              user={user} />
-          </div>
-        </Modal>
-      </div>
-    );
+      );
+    }
   }
 }

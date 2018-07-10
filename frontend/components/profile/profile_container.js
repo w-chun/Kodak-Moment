@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
   user: user,
   followed: state.entities.users.followed,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  loading: state.loading.loading
   };
 };
 
