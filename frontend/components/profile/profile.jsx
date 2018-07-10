@@ -89,7 +89,10 @@ export default class Profile extends React.Component {
     let profile;
     const { user } = this.props;
     if (user) {
-      profilePic = <div className='user-profile-pic'><img src={user.img_url}></img></div>;
+      profilePic =
+        <div className='user-profile-pic'>
+          <img src={user.img_url} className='user-profile-pic-image'></img>
+        </div>;
       profile = this.userProfile();
     }
     if (this.props.loading) {

@@ -18,13 +18,14 @@
 }
 
 .user-profile-pic {
-  width: 152px;
-  height: 152px;
   margin-right: 30px;
 }
 
-.user-profile-pic img {
+.user-profile-pic-image {
   border-radius: 50%;
+  width: 152px;
+  height: 152px;
+  object-fit: cover;
 }
 
 .profile-username {
