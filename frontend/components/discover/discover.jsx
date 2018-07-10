@@ -10,7 +10,6 @@ export default class Discover extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
     this.props.fetchPosts();
     this.props.fetchUsers();
   }

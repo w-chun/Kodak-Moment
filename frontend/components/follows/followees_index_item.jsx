@@ -19,9 +19,13 @@ export default class FolloweesIndexItem extends React.Component {
   render () {
     let followButton;
     const { followee } = this.props;
-    if (this.props.followee.followed) {
+    if (this.props.followee.followed && this.props.currentUser.id === this.props.followee.followee_id) {
+      followButton = <div></div>;
+    } else if (!this.props.followee.followed && this.props.currentUser.id === this.props.followee.followee_id) {
+      followButton = <div></div>;
+    } else if (this.props.followee.followed) {
       followButton = <button onClick={this.handleFollow} className='followees-following-button'>Following</button>;
-    } else {
+    } else if (!this.props.followee.followed) {
       followButton = <button onClick={this.handleFollow} className='followees-follow-button'>Follow</button>;
     }
     return (
