@@ -95,3 +95,48 @@
   background: rgba(0, 0, 0, .5);
   z-index: 2;
 }
+
+@media only screen and (min-width: 0px) {
+  .user-profile-pic-image {
+    width: 77px;
+    height: 77px;
+  }
+
+  .user-profile-pic {
+    margin-right: 0;
+  }
+
+  .user-profile-pic-wrapper {
+    margin: 0 20px;
+  }
+}
+
+@media only screen and (min-width: 753px) {
+  .user-profile-pic-image {
+    width: 85px;
+    height: 85px;
+  }
+
+  .user-profile-pic {
+    margin-right: 0;
+  }
+
+  .user-profile-pic-wrapper {
+    margin: 0 50px;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  .user-profile-pic-image {
+    width: 152px;
+    height: 152px;
+  }
+
+  .user-profile-pic {
+    margin-right: 30px;
+  }
+
+  .user-profile-pic-wrapper {
+    margin: 0 75px;
+  }
+}
