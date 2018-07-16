@@ -29,7 +29,7 @@ export default class Discover extends React.Component {
           <GreetingContainer />
           <div className='discover-container'>
             <div>
-              <h1 className='discover-titles'>Discover People</h1>
+              <h1 className='discover-title'>Discover People</h1>
               <ul className='discover-grid'>
                 {this.props.users.sort(function(a,b) {
                   return Math.floor(Math.random(b.id - a.id) * 10);
@@ -48,7 +48,7 @@ export default class Discover extends React.Component {
               </ul>
             </div>
             <div className='explore-container'>
-              <h1 className='discover-titles'>Explore</h1>
+              <h1 className='explore-title'>Explore</h1>
               <ul className='explore-grid'>
                 {this.props.posts.sort(function(a,b) {
                   return Math.floor(Math.random(b.id - a.id) * 10);
