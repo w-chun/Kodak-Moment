@@ -15,7 +15,6 @@
   align-items: center;
   padding: 7px;
   width: 1020px;
-  min-width: 600px;
   margin: auto;
 }
 
@@ -94,4 +93,40 @@
 
 .nav-profile-link {
   color: black;
+}
+
+@media only screen and (min-width: 0px) {
+  .header {
+    width: 270px;
+  }
+
+  .header-title {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 300px) {
+  .header {
+    width: 270px;
+  }
+
+  .header-title {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 359px) {
+  .header {
+    width: 600px;
+  }
+
+  .header-title {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 609px) {
+  .header {
+    width: 1020px;
+  }
 }

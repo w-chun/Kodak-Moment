@@ -64,7 +64,7 @@ export default class PostForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='post-form-container'>
         <button onClick={this.openModal} className='upload-button'><i className="fas fa-upload"></i>Upload</button>
 
         <Modal

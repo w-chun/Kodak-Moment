@@ -53,3 +53,21 @@
   background: rgba(0, 0, 0, .5);
   z-index: 2;
 }
+
+@media only screen and (min-width: 0px) {
+  .post-form-container{
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 459px) {
+  .post-form-container{
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 609px) {
+  .post-form-container{
+    display: flex;
+  }
+}
