@@ -12,7 +12,7 @@
   object-position: center;
 }
 
-.profile-post-hover, .explore-index-hover {
+.profile-post-hover {
   display: flex;
   position: absolute;
   justify-content: space-around;
@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 
-.profile-post-hover:hover, .explore-index-hover:hover {
+.profile-post-hover:hover {
   background: black;
   opacity: 0.5;
   color: white;

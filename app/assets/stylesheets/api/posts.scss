@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.post-index-container {
+  padding: 0;
+}
+
 .post-index-item {
   max-width: 600px;
   border: 1px solid #eee;

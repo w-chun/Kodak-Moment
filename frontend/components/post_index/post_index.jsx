@@ -14,7 +14,7 @@ export default class PostIndex extends React.Component {
   render() {
     return (
       <div>
-        <ul>
+        <ul className='post-index-container'>
           {this.props.posts.sort(function (a,b) {
             return (b.id - a.id);
           })
