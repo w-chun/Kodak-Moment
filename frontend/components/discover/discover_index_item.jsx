@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class DiscoverIndexItem extends React.Component {
   constructor(props){
@@ -16,6 +17,7 @@ export default class DiscoverIndexItem extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     let followButton;
     const {user} = this.props;
     if (this.props.user.followed) {
@@ -28,7 +30,7 @@ export default class DiscoverIndexItem extends React.Component {
         <li className='discover-index-item'>
           <div className='discover-user-info'>
             <div className='discover-img-wrapper'><img src={`${user.img_url}`} className='discover-img'></img></div>
-            <div className='discover-username'>{user.username}</div>
+            <Link to={`/users/${user.id}`} className='discover-username'><div>{user.username}</div></Link>
             {followButton}
           </div>
         </li>
