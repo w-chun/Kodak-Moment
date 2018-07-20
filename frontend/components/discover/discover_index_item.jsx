@@ -17,7 +17,6 @@ export default class DiscoverIndexItem extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     let followButton;
     const {user} = this.props;
     if (this.props.user.followed) {

@@ -42,7 +42,9 @@
 }
 
 .post-like-wrapper {
+  display: flex;
   padding-top: 10px;
+  justify-content: space-between;
 }
 
 .post-age-wrapper {
@@ -72,4 +74,9 @@
 
 .post-show-caption {
   margin-top: 5px;
+}
+
+.fa-trash-alt {
+  font-size: 20px;
+  cursor: pointer;
 }

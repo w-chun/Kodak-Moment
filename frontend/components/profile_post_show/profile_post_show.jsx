@@ -11,6 +11,7 @@ export default class ProfilePostShow extends React.Component {
       body: ''
     };
     this.handleComment = this.handleComment.bind(this);
+    this.removePhoto = this.removePhoto.bind(this);
   }
 
   componentDidMount() {
@@ -30,10 +31,16 @@ export default class ProfilePostShow extends React.Component {
       .then(this.setState({body: ''}));
   }
 
+  removePhoto(e) {
+    e.preventDefault();
+    this.props.deletePost(this.props.postId);
+  }
+
   render() {
     let age;
     let likes;
     let caption;
+    let removeButton;
     const { post, comments, currentUser, deleteComment } = this.props;
     if (this.props.post.age) {
       age = <div className='post-age'>{post.age} ago</div>;
@@ -47,6 +54,9 @@ export default class ProfilePostShow extends React.Component {
       caption = <div className='post-show-caption'>
                   <b>{post.user.username}</b> {post.caption}
                 </div>;
+    }
+    if (post.author_id === currentUser.id) {
+      removeButton = <i className="far fa-trash-alt" onClick={this.removePhoto}></i>;
     }
     return (
       <div className='profile-post-show-container'>
@@ -75,10 +85,13 @@ export default class ProfilePostShow extends React.Component {
           </div>
           <div className='post-likes-comments'>
             <div className='post-like-wrapper'>
-              <LikesContainer
-              post={post}
-              post_id={post.id} />
-            <label htmlFor="comment" className='comment-button'><i className="far fa-comment"></i></label>
+              <div className='likes-container-wrapper'>
+                <LikesContainer
+                  post={post}
+                  post_id={post.id} />
+                <label htmlFor="comment" className='comment-button'><i className="far fa-comment"></i></label>
+              </div>
+              {removeButton}
             </div>
             {likes}
             <div className='post-age-wrapper'>{age}</div>
