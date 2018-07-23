@@ -80,3 +80,78 @@
   font-size: 20px;
   cursor: pointer;
 }
+
+@media only screen and (min-width: 0px) {
+  .post-show-image img {
+    max-width: 200px;
+  }
+
+  .profile-post-show {
+    margin-left: 20px;
+    width: 150px;
+  }
+
+  .post-comment-input {
+    width: 65%;
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  .post-show-image img {
+    max-width: 300px;
+  }
+
+  .profile-post-show {
+    margin-left: 20px;
+    width: 175px;
+  }
+
+  .post-comment-input {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .post-show-image img {
+    max-width: 400px;
+  }
+
+  .profile-post-show {
+    margin-left: 20px;
+    width: 225px;
+  }
+
+  .post-comment-input {
+    width: 77%;
+  }
+}
+
+@media only screen and (min-width: 753px) {
+  .post-show-image img {
+    max-width: 500px;
+  }
+
+  .profile-post-show {
+    margin-left: 25px;
+    width: 250px;
+  }
+
+  .post-comment-input {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  .post-show-image img {
+    max-width: 600px;
+  }
+
+  .profile-post-show {
+    margin-left: 30px;
+    width: 287px;
+  }
+
+  .post-comment-input {
+    width: 83%;
+  }
+}
