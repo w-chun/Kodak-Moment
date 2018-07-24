@@ -2,6 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.session-form-container {
+  height: 100%;
+}
+
+.session-form-container::after {
+  content: "";
+  background-image: url("http://res.cloudinary.com/dih798zsl/image/upload/v1532391749/mtqbjaltxkbaotiu03wj.jpg");
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .session-form-wrapper {
   display: flex;
   flex-direction: column;
@@ -15,13 +34,14 @@
 
 .session-form {
   display: flex;
-  border: 1px solid #eee;
+  border: 1px solid #e6e6e6;
   max-width: 350px;
   flex-direction: column;
   text-align: center;
   padding: 10px 40px 40px 40px;
   margin-top: 50px;
   margin-bottom: 25px;
+  background: white;
 }
 
 
@@ -37,15 +57,17 @@
   background: #3897f0;
   color: #fff;
   cursor: pointer;
+  border-color: #3897f0 !important;
 }
 
 .nav-login, .nav-signup {
-  border: 1px solid #eee;
+  border: 1px solid #e6e6e6;
   max-width: 350px;
   text-align: center;
   justify-content: center;
   padding: 10px;
   font-size: 14px;
+  background: white;
 }
 
 .nav-login-link, .nav-signup-link {

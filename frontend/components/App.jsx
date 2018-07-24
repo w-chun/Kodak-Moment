@@ -7,7 +7,7 @@ import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
-  <div>
+  <div className='kodak'>
     <Switch>
       <ProtectedRoute exact path='/' component={HomeContainer} />
       <AuthRoute path='/login' component={SessionFormContainer} />
