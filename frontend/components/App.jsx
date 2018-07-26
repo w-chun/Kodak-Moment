@@ -1,4 +1,5 @@
 import React from 'react';
+import Favicon from 'react-favicon';
 import HomeContainer from './home/home_container';
 import SessionFormContainer from './session_form/session_form_container';
 import ProfileContainer from './profile/profile_container';
@@ -8,6 +9,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div className='kodak'>
+    <Favicon url="https://res.cloudinary.com/dih798zsl/image/upload/v1532566637/jyq6g6u1kldqllfc4ss7.png"/>
     <Switch>
       <ProtectedRoute exact path='/' component={HomeContainer} />
       <AuthRoute path='/login' component={SessionFormContainer} />
