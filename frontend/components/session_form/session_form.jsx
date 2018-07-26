@@ -24,6 +24,13 @@ export default class SessionForm extends React.Component {
     this.props.clearErrors();
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.path !== nextProps.match.path) {
+      this.setState({username: "", password: ""});
+      this.props.clearErrors();
+    }
+  }
+
   update(field) {
     return (e) => {
       this.setState({[field]: e.currentTarget.value});
@@ -114,7 +121,7 @@ export default class SessionForm extends React.Component {
                     <div className='session-or'>
                       <span className='or'>or</span>
                     </div>
-                    <button className="demo-signup" onClick={this.loginDemo()}>Login with Demo</button>
+                    <button className="demo-signup" onClick={this.loginDemo()} type="button">Login with Demo</button>
                   </div>;
     } else {
       button = 'Log In';
@@ -123,7 +130,7 @@ export default class SessionForm extends React.Component {
                     <div className='session-or'>
                       <span className='or'>or</span>
                     </div>
-                    <button className="demo-login" onClick={this.handleDemo()}>Login with Demo</button>
+                    <button className="demo-login" onClick={this.handleDemo()} type="submit">Login with Demo</button>
                   </div>;
     }
 
