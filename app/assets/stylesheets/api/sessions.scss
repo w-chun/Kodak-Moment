@@ -144,3 +144,45 @@
   border-radius: 3px;
   cursor: pointer;
 }
+
+.about-me {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  flex-direction: column;
+}
+
+.about-me p {
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  margin: 10px 20px;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.social-media a {
+  margin-right: 8px;
+}
+
+.linkedin {
+  width: 40px;
+  height: 40px;
+  background: url("https://res.cloudinary.com/dih798zsl/image/upload/c_scale,w_40/v1512115468/linkedin-logo-copy_pdq4jt_vximdh.png")
+}
+
+.github {
+  width: 40px;
+  height: 40px;
+  background: url("https://res.cloudinary.com/dih798zsl/image/upload/c_scale,w_40/v1512116165/github-512_fy2div.png")
+}
+
+.website {
+  width: 40px;
+  height: 40px;
+  background: url("https://res.cloudinary.com/dih798zsl/image/upload/c_scale,w_40/v1515112803/website_phi1ht.png")
+}

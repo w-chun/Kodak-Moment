@@ -158,6 +158,14 @@ export default class SessionForm extends React.Component {
           </div>
           <div className='nav-login'>{navLogin}</div>
           <div className='nav-signup'>{navSignup}</div>
+          <div className='about-me'>
+            <p>About Me.</p>
+            <div className='social-media'>
+              <a href="https://github.com/w-chun" target="_blank"><div className="github"></div></a>
+              <a href="https://www.linkedin.com/in/wilson-chun/" target="_blank"><div className="linkedin"></div></a>
+              <a href="https://w-chun.github.io/portfolio/" target="_blank"><div className="website"></div></a>
+            </div>
+          </div>
         </form>
       </div>
     );
