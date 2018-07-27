@@ -14,7 +14,9 @@ export default class PostIndexItem extends React.Component {
       likes = <div className='likes-counter'>{post.likes} likes</div>;
     }
     if (post.caption) {
-      caption = <div className='post-caption'><b>{post.user.username}</b> {post.caption}</div>;
+      caption = <div className='post-caption'>
+                  <Link to={`/users/${post.user.id}`} className='caption-username'><b>{post.user.username}</b></Link> {post.caption}
+                </div>;
     }
     return (
       <li className='post-index-item'>
