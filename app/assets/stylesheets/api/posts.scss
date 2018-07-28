@@ -68,3 +68,60 @@
   font-size: 20px;
   cursor: pointer;
 }
+
+.find-people {
+  margin-top: 137px;
+  padding-left: 7px;
+}
+
+.find-people-post {
+  margin: auto;
+  max-width: 300px;
+  border: 1px solid #eee;
+}
+
+.no-followers {
+  margin: 15px;
+  padding: 20%;
+}
+
+.explore-link {
+  text-decoration: none;
+  color: #3897f0;
+}
+
+.fake-likes-comments {
+  display: flex;
+  margin-left: 15px;
+}
+
+.fake-likes-comments i {
+  font-size: 20px;
+  margin-right: 16px;
+}
+
+.fake-post-caption {
+  margin: 5px 0px 5px 15px;
+}
+
+@media only screen and (min-width: 400px) {
+  .find-people-post {
+    max-width: 400px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .find-people-post {
+    max-width: 500px;
+  }
+
+  .no-followers {
+    padding: 13%;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  .find-people-post {
+    max-width: 600px;
+  }
+}
