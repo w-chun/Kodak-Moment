@@ -82,6 +82,10 @@
 }
 
 @media only screen and (min-width: 0px) {
+  .post-show-image {
+    min-width: 200px;
+  }
+
   .post-show-image img {
     max-width: 200px;
   }
@@ -97,6 +101,10 @@
 }
 
 @media only screen and (min-width: 400px) {
+  .post-show-image {
+    min-width: 300px;
+  }
+
   .post-show-image img {
     max-width: 300px;
   }
@@ -112,6 +120,10 @@
 }
 
 @media only screen and (min-width: 600px) {
+  .post-show-image {
+    min-width: 400px;
+  }
+
   .post-show-image img {
     max-width: 400px;
   }
@@ -127,6 +139,10 @@
 }
 
 @media only screen and (min-width: 753px) {
+  .post-show-image {
+    min-width: 500px;
+  }
+
   .post-show-image img {
     max-width: 500px;
   }
@@ -142,6 +158,10 @@
 }
 
 @media only screen and (min-width: 1020px) {
+  .post-show-image {
+    min-width: 600px;
+  }
+
   .post-show-image img {
     max-width: 600px;
   }
