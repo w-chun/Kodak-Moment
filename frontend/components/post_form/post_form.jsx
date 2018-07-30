@@ -34,6 +34,7 @@ export default class PostForm extends React.Component {
     const post = Object.assign({}, this.state);
     this.props.createPost(post).then(this.props.history.push('/'));
     this.closeModal();
+    this.setState({img_url: '', caption: ''});
   }
 
   update(field){
