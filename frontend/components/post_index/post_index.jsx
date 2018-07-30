@@ -1,6 +1,7 @@
 import React from 'react';
 import PostIndexItem from './post_index_item';
 import { Link } from 'react-router-dom';
+import Loading from '../loading';
 
 export default class PostIndex extends React.Component {
   constructor(props){
@@ -16,7 +17,11 @@ export default class PostIndex extends React.Component {
   render() {
     let index;
     const { user } = this.props;
-    if (this.props.user && this.props.posts.filter(post => this.props.followeesIds.includes(post.author_id)).length !== 0) {
+    if (this.props.loading) {
+      return <Loading />;
+    } else if (
+      this.props.user && !this.props.loading &&
+      this.props.posts.filter(post => this.props.followeesIds.includes(post.author_id)).length !== 0) {
       index = <ul className='post-index-container'>
                 {this.props.posts.sort(function (a,b) {
                   return (b.id - a.id);
@@ -30,7 +35,7 @@ export default class PostIndex extends React.Component {
                 ))
                 }
               </ul>;
-    } else if (user) {
+    } else if (user && !this.props.loading) {
       index = <div className='find-people'>
                 <div className='find-people-post'>
                   <div className='post-user'>
