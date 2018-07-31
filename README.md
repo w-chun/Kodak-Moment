@@ -19,19 +19,19 @@ Kodak Moment is a single-page web application that was built using React and Red
 
 ### Home Feed
 
-![Home Feed](https://github.com/w-chun/Kodak/blob/master/screenshots/home_feed.png)
+![Home Feed](https://github.com/w-chun/Kodak-Moment/blob/master/screenshots/home_feed.png)
 
 The home feed contains posts from all users that you follow in the order of the posts shared most recently. Users can like or comment on each post to show their love for the post.
 
 ### Profile
 
-![Profile](https://github.com/w-chun/Kodak/blob/master/screenshots/profile.png)
+![Profile](https://github.com/w-chun/Kodak-Moment/blob/master/screenshots/profile.png)
 
 The user profile displays all your profile information, which includes number of posts, number of followers, number of users following, and all your posts on Kodak Moment. This is also where you can edit your profile username and profile photo.
 
 ### Photo Upload
 
-![Photo Upload](https://github.com/w-chun/Kodak/blob/master/screenshots/photo_upload.png)
+![Photo Upload](https://github.com/w-chun/Kodak-Moment/blob/master/screenshots/photo_upload.png)
 
 This photo upload form will pop up when you click on the upload button on navigation bar. By clicking the `choose file` button, a widget from Cloudinary will pop up which allows you to upload a file from your computer, upload a photo from a public URL, or take a photo of yourself through your webcam. After finishing the upload, you'll see a preview of the photo and then you can decide if you want to leave a caption or not before posting onto Kodak Moment.
 
