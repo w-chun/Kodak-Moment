@@ -21,7 +21,7 @@ user3 = User.create(username: "Fire Kickz", email: "firekickz@gmail.com", passwo
 user4 = User.create(username: "Island Life", email: "islandlife@gmail.com", password: "password",
   img_url: "https://res.cloudinary.com/dih798zsl/image/upload/v1511461159/765-default-avatar_zsj3xt.png" )
 user5 = User.create(username: "Team Swoosh", email: "teamswoosh@gmail.com", password: "password",
-  img_url: "http://res.cloudinary.com/dih798zsl/image/upload/v1532990442/flge9z2muinuadcnbcwk.jpg" )
+  img_url: "https://res.cloudinary.com/dih798zsl/image/upload/v1532990442/flge9z2muinuadcnbcwk.jpg" )
 user6 = User.create(username: "Sweetslover", email: "sweetslover@gmail.com", password: "password",
   img_url: "https://res.cloudinary.com/dih798zsl/image/upload/v1511461159/765-default-avatar_zsj3xt.png" )
 user7 = User.create(username: "Kyle35", email: "kyle35@gmail.com", password: "password",
@@ -42,9 +42,9 @@ post10 = Post.create(img_url: "https://res.cloudinary.com/dih798zsl/image/upload
 post11 = Post.create(img_url: "https://res.cloudinary.com/dih798zsl/image/upload/v1528415015/nsp1dir7egj2lconsidq.jpg", author_id: user3.id, caption: "Bred 350s")
 post12 = Post.create(img_url: "https://res.cloudinary.com/dih798zsl/image/upload/v1528236949/jz16ejcgzws2d4muspkn.jpg", author_id: user3.id, caption: "Sean Wotherspoon Air Max 1/97")
 post13 = Post.create(img_url: "https://res.cloudinary.com/dih798zsl/image/upload/v1525911859/qyqjbbgvdgld3kvum7te.png", author_id: user3.id, caption: "Off-White Prestos")
-post14 = Post.create(img_url: "http://res.cloudinary.com/dih798zsl/image/upload/v1526689461/aofrdeyqdwrah4voadhc.jpg", author_id: user3.id, caption: "Adidas Human Race NMDs")
+post14 = Post.create(img_url: "https://res.cloudinary.com/dih798zsl/image/upload/v1526689461/aofrdeyqdwrah4voadhc.jpg", author_id: user3.id, caption: "Adidas Human Race NMDs")
 post15 = Post.create(img_url: "https://res.cloudinary.com/dih798zsl/image/upload/v1532983212/jahrbjyywpcwvslw20qp.jpg", author_id: user4.id, caption: "Lanikai Beach")
-post16 = Post.create(img_url: "http://res.cloudinary.com/dih798zsl/image/upload/v1532982909/jgkuwjyfvdo0fzjnddnu.jpg", author_id: user4.id, caption: "Stairway to Heaven")
+post16 = Post.create(img_url: "https://res.cloudinary.com/dih798zsl/image/upload/v1532982909/jgkuwjyfvdo0fzjnddnu.jpg", author_id: user4.id, caption: "Stairway to Heaven")
 post17 = Post.create(img_url: "https://res.cloudinary.com/dih798zsl/image/upload/v1525911975/r5vwhjqipsaqqqqo1prp.jpg", author_id: user5.id, caption: "Air Jordan 1 Bred Toes")
 post18 = Post.create(img_url: "https://res.cloudinary.com/dih798zsl/image/upload/v1526426883/i8srgljf2zld44m3l9wo.jpg", author_id: user5.id, caption: "Kobe 1 Prelude")
 post19 = Post.create(img_url: "https://res.cloudinary.com/dih798zsl/image/upload/v1532990722/eivcwzmkp8tmaeffvbnk.jpg", author_id: user6.id, caption: "Mango Bingsoo from U:Dessert Story")
