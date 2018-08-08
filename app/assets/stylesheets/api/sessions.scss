@@ -132,6 +132,10 @@
   cursor: pointer;
 }
 
+.demo-login:hover {
+  opacity: 0.7;
+}
+
 .demo-signup {
   margin: 10px 0 20px 0;
   padding: 0 12px;
@@ -172,17 +176,29 @@
 .linkedin {
   width: 40px;
   height: 40px;
-  background: url("https://res.cloudinary.com/dih798zsl/image/upload/c_scale,w_40/v1512115468/linkedin-logo-copy_pdq4jt_vximdh.png")
+  background: url("https://res.cloudinary.com/dih798zsl/image/upload/c_scale,w_40/v1512115468/linkedin-logo-copy_pdq4jt_vximdh.png");
 }
 
 .github {
   width: 40px;
   height: 40px;
-  background: url("https://res.cloudinary.com/dih798zsl/image/upload/c_scale,w_40/v1512116165/github-512_fy2div.png")
+  background: url("https://res.cloudinary.com/dih798zsl/image/upload/c_scale,w_40/v1512116165/github-512_fy2div.png");
 }
 
 .website {
   width: 40px;
   height: 40px;
-  background: url("https://res.cloudinary.com/dih798zsl/image/upload/c_scale,w_40/v1515112803/website_phi1ht.png")
+  background: url("https://res.cloudinary.com/dih798zsl/image/upload/c_scale,w_40/v1515112803/website_phi1ht.png");
+}
+
+.linkedin:hover {
+  opacity: 0.7;
+}
+
+.website:hover {
+  opacity: 0.7;
+}
+
+.github:hover {
+  opacity: 0.7;
 }
