@@ -28,7 +28,9 @@ export default class DiscoverIndexItem extends React.Component {
       <div className='discover-index-wrapper'>
         <li className='discover-index-item'>
           <div className='discover-user-info'>
-            <div className='discover-img-wrapper'><img src={`${user.img_url}`} className='discover-img'></img></div>
+            <Link to={`/users/${user.id}`}>
+              <div className='discover-img-wrapper'><img src={`${user.img_url}`} className='discover-img'></img></div>
+            </Link>
             <Link to={`/users/${user.id}`} className='discover-username'><div>{user.username}</div></Link>
             {followButton}
           </div>
