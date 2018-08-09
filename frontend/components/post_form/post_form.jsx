@@ -50,7 +50,7 @@ export default class PostForm extends React.Component {
       window.cloudinary_options,
       function (err, results){
         if (!err) {
-          let newState = Object.assign({}, this.state, {img_url: results[0].url});
+          let newState = Object.assign({}, this.state, {img_url: results[0].secure_url});
           this.setState(newState);
         }
       }.bind(this));
