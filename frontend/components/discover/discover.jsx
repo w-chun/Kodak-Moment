@@ -53,6 +53,7 @@ export default class Discover extends React.Component {
                 {this.props.posts.sort(function(a,b) {
                   return Math.floor(Math.random(b.id - a.id) * 10);
                 })
+                .filter(post => post.author_id !== this.props.currentUser.id)
                 .map(post => (
                   <ExploreIndexItem
                     key={post.id}
