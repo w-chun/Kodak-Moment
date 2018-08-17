@@ -10,9 +10,13 @@ const loadingReducer = (state = {loading: false}, action) => {
     case START_LOADING_USERS:
         return merge({}, state, {loading: true});
     case RECEIVE_POSTS:
-        return merge({}, state, {loading: false});
+        setTimeout(function() {
+          return merge({}, state, {loading: false});
+        }, 5000);
     case RECEIVE_USERS:
-        return merge({}, state, {loading: false});
+        setTimeout(function() {
+          return merge({}, state, {loading: false});
+        }, 5000);
     case RECEIVE_USER:
         return merge({}, state, {loading: false});
     default:
